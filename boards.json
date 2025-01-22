@@ -1,0 +1,422 @@
+[
+  {
+    "name": "Lexington",
+    "id": "7355753313",
+    "type": "Demo",
+    "groupId": "demo_permits__1",
+    "folder": "15054091"
+  },
+  {
+    "name": "Lexington",
+    "id": "7355759603",
+    "type": "Building",
+    "groupId": "building_permits__1",
+    "folder": "15054091"
+  },
+  {
+    "name": "Brookline",
+    "id": "7355841691",
+    "type": "Demo",
+    "groupId": "demo_permits__1",
+    "folder": "15054091"
+  },
+  {
+    "name": "Brookline",
+    "id": "7355845891",
+    "type": "Building",
+    "groupId": "building_permits__1",
+    "folder": "15054091"
+  },
+  {
+    "name": "Easton",
+    "id": "7355850679",
+    "type": "Building",
+    "groupId": "building_permits__1",
+    "folder": "15054091"
+  },
+  {
+    "name": "Foxborough",
+    "id": "7355854694",
+    "type": "Building",
+    "groupId": "building_permits__1",
+    "folder": "15054091"
+  },
+  {
+    "name": "Hingham",
+    "id": "7355860575",
+    "type": "Building",
+    "groupId": "building_permits__1",
+    "folder": "15054091"
+  },
+  {
+    "name": "Milton",
+    "id": "7355865692",
+    "type": "Building",
+    "groupId": "building_permits__1",
+    "folder": "15054091"
+  },
+  {
+    "name": "Norwood",
+    "id": "7355872897",
+    "type": "Building",
+    "groupId": "building_permits__1",
+    "folder": "15054091"
+  },
+  {
+    "name": "West Roxbury",
+    "id": "7355876258",
+    "type": "Demo",
+    "groupId": "demo_permits__1",
+    "folder": "15054091"
+  },
+  {
+    "name": "West Roxbury",
+    "id": "7355881822",
+    "type": "Building",
+    "groupId": "building_permits__1",
+    "folder": "15054091"
+  },
+  {
+    "name": "Jamaica Plain",
+    "id": "7355886230",
+    "type": "Demo",
+    "groupId": "demo_permits__1",
+    "folder": "15054091"
+  },
+  {
+    "name": "Jamaica Plain",
+    "id": "7355891824",
+    "type": "Building",
+    "groupId": "building_permits__1",
+    "folder": "15054091"
+  },
+  {
+    "name": "Easton",
+    "id": "7355906705",
+    "type": "Demo",
+    "groupId": "demo_permits__1",
+    "folder": "15054091"
+  },
+  {
+    "name": "Foxborough",
+    "id": "7355917763",
+    "type": "Demo",
+    "groupId": "demo_permits__1",
+    "folder": "15054091"
+  },
+  {
+    "name": "Hingham",
+    "id": "7355926068",
+    "type": "Demo",
+    "groupId": "demo_permits__1",
+    "folder": "15054091"
+  },
+  {
+    "name": "Milton",
+    "id": "7355933179",
+    "type": "Demo",
+    "groupId": "demo_permits__1",
+    "folder": "15054091"
+  },
+  {
+    "name": "Norwood",
+    "id": "7355938209",
+    "type": "Demo",
+    "groupId": "demo_permits__1",
+    "folder": "15054091"
+  },
+  {
+    "name": "Newton",
+    "id": "7356023315",
+    "type": "Demo",
+    "groupId": "demo_permits__1",
+    "folder": "15054091"
+  },
+  {
+    "name": "Newton",
+    "id": "7356028123",
+    "type": "Building",
+    "groupId": "building_permits__1",
+    "folder": "15054091"
+  },
+  {
+    "name": "Weston",
+    "id": "7356033210",
+    "type": "Demo",
+    "groupId": "demo_permits__1",
+    "folder": "15054091"
+  },
+  {
+    "name": "Weston",
+    "id": "7356039052",
+    "type": "Building",
+    "groupId": "building_permits__1",
+    "folder": "15054091"
+  },
+  {
+    "name": "Woburn",
+    "id": "7372393812",
+    "type": "Demo",
+    "groupId": "demo_permits__1",
+    "folder": "15054091"
+  },
+  {
+    "name": "Woburn",
+    "id": "7372397943",
+    "type": "Building",
+    "groupId": "building_permits__1",
+    "folder": "15054091"
+  },
+  {
+    "name": "Woburn",
+    "id": "7373487885",
+    "type": "Demo",
+    "folder": "15054099",
+    "groupId": "demo_permits__1"
+  },
+  {
+    "name": "Woburn",
+    "id": "7373491296",
+    "type": "Building",
+    "folder": "15054099",
+    "groupId": "building_permits__1"
+  },
+  {
+    "name": "Foxborough",
+    "id": "7373672845",
+    "type": "Demo",
+    "folder": "15054099",
+    "groupId": "demo_permits__1"
+  },
+  {
+    "name": "Foxborough",
+    "id": "7373680037",
+    "type": "Building",
+    "folder": "15054099",
+    "groupId": "building_permits__1"
+  },
+  {
+    "name": "Newton",
+    "id": "7373691615",
+    "type": "Demo",
+    "folder": "15054099",
+    "groupId": "demo_permits__1"
+  },
+  {
+    "name": "Newton",
+    "id": "7373701141",
+    "type": "Building",
+    "folder": "15054099",
+    "groupId": "building_permits__1"
+  },
+  {
+    "name": "Norwood",
+    "id": "7373712377",
+    "type": "Demo",
+    "folder": "15054099",
+    "groupId": "demo_permits__1"
+  },
+  {
+    "name": "Norwood",
+    "id": "7373718206",
+    "type": "Building",
+    "folder": "15054099",
+    "groupId": "building_permits__1"
+  },
+  {
+    "name": "West Roxbury",
+    "id": "7373734807",
+    "type": "Demo",
+    "folder": "15054099",
+    "groupId": "demo_permits__1"
+  },
+  {
+    "name": "West Roxbury",
+    "id": "7373743678",
+    "type": "Building",
+    "folder": "15054099",
+    "groupId": "building_permits__1"
+  },
+  {
+    "name": "Brookline",
+    "id": "7373754306",
+    "type": "Demo",
+    "folder": "15054099",
+    "groupId": "demo_permits__1"
+  },
+  {
+    "name": "Brookline",
+    "id": "7373760356",
+    "type": "Building",
+    "folder": "15054099",
+    "groupId": "building_permits__1"
+  },
+  {
+    "name": "Weston",
+    "id": "7373782208",
+    "type": "Demo",
+    "folder": "15054099",
+    "groupId": "demo_permits__1"
+  },
+  {
+    "name": "Weston",
+    "id": "7373788536",
+    "type": "Building",
+    "folder": "15054099",
+    "groupId": "building_permits__1"
+  },
+  {
+    "name": "Lexington",
+    "id": "7373799276",
+    "type": "Demo",
+    "folder": "15054099",
+    "groupId": "demo_permits__1"
+  },
+  {
+    "name": "Lexington",
+    "id": "7373804917",
+    "type": "Building",
+    "folder": "15054099",
+    "groupId": "building_permits__1"
+  },
+  {
+    "name": "Milton",
+    "id": "7373885273",
+    "type": "Demo",
+    "folder": "15054099",
+    "groupId": "demo_permits__1"
+  },
+  {
+    "name": "Milton",
+    "id": "7373891778",
+    "type": "Building",
+    "folder": "15054099",
+    "groupId": "building_permits__1"
+  },
+  {
+    "name": "Jamaica Plain",
+    "id": "7373933857",
+    "type": "Demo",
+    "folder": "15054099",
+    "groupId": "demo_permits__1"
+  },
+  {
+    "name": "Jamaica Plain",
+    "id": "7373937648",
+    "type": "Building",
+    "folder": "15054099",
+    "groupId": "building_permits__1"
+  },
+  {
+    "name": "Easton",
+    "id": "7373945623",
+    "type": "Demo",
+    "folder": "15054099",
+    "groupId": "demo_permits__1"
+  },
+  {
+    "name": "Easton",
+    "id": "7373951177",
+    "type": "Building",
+    "folder": "15054099",
+    "groupId": "building_permits__1"
+  },
+  {
+    "name": "Hingham",
+    "id": "7373968045",
+    "type": "Demo",
+    "folder": "15054099",
+    "groupId": "demo_permits__1"
+  },
+  {
+    "name": "Hingham",
+    "id": "7373976575",
+    "type": "Building",
+    "folder": "15054099",
+    "groupId": "building_permits__1"
+  },
+  {
+    "name": "Needham",
+    "id": "7613609778",
+    "type": "Demo",
+    "folder": "15054091",
+    "groupId": "demo_permits__1"
+  },
+  {
+    "name": "Needham",
+    "id": "7613612799",
+    "type": "Building",
+    "folder": "15054091",
+    "groupId": "building_permits__1"
+  },
+  {
+    "name": "Needham",
+    "id": "7613622176",
+    "type": "Demo",
+    "folder": "15054099",
+    "groupId": "demo_permits__1"
+  },
+  {
+    "name": "Needham",
+    "id": "7613624581",
+    "type": "Building",
+    "folder": "15054099",
+    "groupId": "building_permits__1"
+  },
+  {
+    "name": "Stoughton",
+    "id": "8110876557",
+    "type": "Demo",
+    "folder": "15054091",
+    "groupId": "demo_permits_mkkhqytt"
+  },
+  {
+    "name": "Stoughton",
+    "id": "8110876949",
+    "type": "Building",
+    "folder": "15054091",
+    "groupId": "building_permits_mkkh3sjb"
+  },
+  {
+    "name": "Stoughton",
+    "id": "8110879408",
+    "type": "Demo",
+    "folder": "15054099",
+    "groupId": "demo_permits_mkkhj9s6"
+  },
+  {
+    "name": "Stoughton",
+    "id": "8110880375",
+    "type": "Building",
+    "folder": "15054099",
+    "groupId": "building_permits_mkkhxws"
+  },
+  {
+    "name": "Medway",
+    "id": "8186297714",
+    "type": "Demo",
+    "folder": "15054091",
+    "groupId": "demo_permits_mkkzr8n5"
+  },
+  {
+    "name": "Medway",
+    "id": "8186303172",
+    "type": "Building",
+    "folder": "15054091",
+    "groupId": "building_permits_mkkzwect"
+  },
+  {
+    "name": "Medway",
+    "id": "8186308372",
+    "type": "Demo",
+    "folder": "15054099",
+    "groupId": "demo_permits_mkkzreez"
+  },
+  {
+    "name": "Medway",
+    "id": "8186311994",
+    "type": "Building",
+    "folder": "15054099",
+    "groupId": "building_permits_mkkzfy03"
+  }
+]

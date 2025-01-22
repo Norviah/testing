@@ -1,0 +1,28 @@
+{
+  "extends": "./node_modules/@tsconfig/node21/tsconfig.json",
+  "ts-node": {
+    "files": true
+  },
+  "compilerOptions": {
+    "declaration": false,
+    "removeComments": true,
+    "module": "node16",
+    "outDir": "build",
+    "strict": true,
+    "resolveJsonModule": true,
+   "noEmit": false,
+   "noImplicitAny": false,
+    "noEmitOnError": false,
+    "moduleDetection": "force",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*",
+    "cli/**/*"
+  ]
+}
