@@ -1,10 +1,11 @@
 import { join } from 'node:path';
 import { path as root } from 'app-root-path';
+import { config } from "@/utils/config";
 
 export const ROOT: string = root;
 
 export const PYTHON_DIR: string = join(ROOT, 'python');
-export const PYTHON_ACTIVATION_SOURCE: string = join(PYTHON_DIR, 'env', 'Scripts', 'activate');
+export const PYTHON_ACTIVATION_SOURCE: string = config.OS === "windows" ? join(PYTHON_DIR, 'env', 'Scripts', 'activate') : join(PYTHON_DIR, 'env', 'bin', 'activate');
 export const PYTHON_SCRIPT: string = join(PYTHON_DIR, 'main.py');
 
 export const DATA: string = join(ROOT, 'data');
