@@ -133,3 +133,5 @@ logs
 
 data/**/*
 eng.traineddata
+
+python/env
