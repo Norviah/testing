@@ -19,7 +19,7 @@ export async function main(): Promise<void> {
     mkdirSync(paths.STOUGHTON, { recursive: true });
   }
 
-  const browser = await puppateer.launch({ ...browserConfig, headless: false });
+  const browser = await puppateer.launch({ ...browserConfig });
   const page = await browser.newPage();
 
   await page.goto('https://www.stoughton.org/Archive.aspx?AMID=36');
