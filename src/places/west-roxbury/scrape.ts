@@ -58,20 +58,15 @@ export async function main(): Promise<void> {
 
   const westRoxbury = await getCity(page, 'West Roxbury');
   const jamaicaPlain = await getCity(page, 'Jamaica Plain');
+  const boston = await getCity(page, 'Boston');
 
   await page.close();
   await browser.close();
 
-  writeFileSync(
-    paths.WEST_ROXBURY_DATA,
-    JSON.stringify([...westRoxbury, ...jamaicaPlain], null, 2),
-  );
+  writeFileSync(paths.WEST_ROXBURY_DATA, JSON.stringify([...westRoxbury, ...jamaicaPlain, ...boston], null, 2));
 }
 
-async function getCity<City extends string>(
-  page: Page,
-  city: City,
-): Promise<SavedPermitDataStructure<'West Roxbury', 'MA'>[]> {
+async function getCity<City extends string>(page: Page, city: City): Promise<SavedPermitDataStructure<'West Roxbury', 'MA'>[]> {
   await page.reload();
   await wait(LONG_DELAY);
 
@@ -112,9 +107,7 @@ async function getCity<City extends string>(
     }
 
     // check if next button has disabled class
-    const isDisabled = await nextButtonContainer.evaluate((el) =>
-      el.classList.contains('disabled'),
-    );
+    const isDisabled = await nextButtonContainer.evaluate((el) => el.classList.contains('disabled'));
 
     if (isDisabled) {
       finished = true;
@@ -145,7 +138,7 @@ async function parseTable<City extends string>(
   const parsedData: SavedPermitDataStructure<'West Roxbury', 'MA'>[] = [];
 
   const date = new Date();
-  const oldestAllowedDate = new Date(date.getFullYear(), date.getMonth(), 1);
+  const oldestAllowedDate = new Date(date.getFullYear(), date.getMonth() - 1, 1);
 
   for (const row of rows) {
     const data = await row.$$('td');
@@ -190,7 +183,9 @@ async function parseTable<City extends string>(
 
     if (
       parsed.comments?.toLowerCase().includes('demo') ||
-      parsed.comments?.toLowerCase().includes('build')
+      parsed.comments?.toLowerCase().includes('build') ||
+      parsed.description?.toLowerCase().includes('demo') ||
+      parsed.description?.toLowerCase().includes('build')
     ) {
       parsedData.push(parsed as SavedPermitDataStructure<'West Roxbury', 'MA'>);
     }
@@ -202,3 +197,5 @@ async function parseTable<City extends string>(
 async function wait(milliseconds: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, milliseconds));
 }
+
+main();
