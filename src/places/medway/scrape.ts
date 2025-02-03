@@ -160,9 +160,7 @@ async function parseTable(page: Page, pageCounter: number) {
       ...d,
       isDemo: d.isDemo
         ? String(d.isDemo).toLowerCase().includes('yes')
-        : description!.toLowerCase().includes('demo') ||
-          d.permittypedescr?.toLowerCase().includes('demo') ||
-          false,
+        : description!.toLowerCase().includes('demo') || d.permittypedescr?.toLowerCase().includes('demo') || false,
       permitnumber: permitNumber!,
       address: permitAddress!,
       permittypedescr: permitType!,
@@ -280,5 +278,3 @@ const textsWithKey: Record<string, keyof SavedPermitDataStructureWithDate<'Medwa
   'zoning district': 'zone',
   'Does this project include demolition work?': 'isDemo',
 };
-
-main();
