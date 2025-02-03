@@ -22,6 +22,9 @@ export const WOBURN_DATA: string = join(WOBURN, 'data.json');
 export const MEDWAY: string = join(PERMITS, 'medway');
 export const MEDWAY_DATA: string = join(MEDWAY, 'data.json');
 
+export const MEDFORD: string = join(PERMITS, 'medford');
+export const MEDFORD_DATA: string = join(MEDFORD, 'data.json');
+
 export const NEEDHAM: string = join(PERMITS, 'needham');
 export const NEEDHAM_DATA: string = join(NEEDHAM, 'data.json');
 export const NEEDHAM_PDF: string = join(NEEDHAM, 'data.pdf');

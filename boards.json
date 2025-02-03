@@ -418,5 +418,33 @@
     "type": "Building",
     "folder": "15054099",
     "groupId": "building_permits_mkkzfy03"
+  },
+  {
+    "name": "Medford",
+    "id": "8392042724",
+    "type": "Demo",
+    "folder": "15054091",
+    "groupId": "demo_permits_mkmtthh7"
+  },
+  {
+    "name": "Medford",
+    "id": "8392049634",
+    "type": "Building",
+    "folder": "15054091",
+    "groupId": "building_permits_mkmtyycr"
+  },
+  {
+    "name": "Medford",
+    "id": "8392055835",
+    "type": "Demo",
+    "folder": "15054099",
+    "groupId": "demo_permits_mkmtfwrc"
+  },
+  {
+    "name": "Medford",
+    "id": "8392063359",
+    "type": "Building",
+    "folder": "15054099",
+    "groupId": "building_permits_mkmtn214"
   }
 ]
