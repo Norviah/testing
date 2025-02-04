@@ -111,7 +111,9 @@ export async function main(): Promise<void> {
   await page.close();
   await browser.close();
 
-  writeFileSync(paths.BOSTON_DATA, JSON.stringify(data, null, 2));
+  const unique = data.filter((item, index) => data.findIndex((x) => x.permitnumber === item.permitnumber) === index);
+
+  writeFileSync(paths.BOSTON_DATA, JSON.stringify(unique, null, 2));
 }
 
 async function scrape(page: Page) {
