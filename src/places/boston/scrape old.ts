@@ -1,11 +1,4 @@
-import {
-  existsSync,
-  mkdirSync,
-  readFileSync,
-  readdirSync,
-  renameSync,
-  writeFileSync,
-} from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, readdirSync, renameSync, writeFileSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { join } from 'node:path';
 import { waitForDownload } from '@/utils/helpers';
@@ -21,8 +14,8 @@ const downloadsPath = join(homedir(), 'Downloads');
 const downloadsFile = readdirSync(downloadsPath);
 
 export async function main(): Promise<void> {
-  if (!existsSync(paths.WEST_ROXBURY)) {
-    mkdirSync(paths.WEST_ROXBURY, { recursive: true });
+  if (!existsSync(paths.BOSTON)) {
+    mkdirSync(paths.BOSTON, { recursive: true });
   }
 
   const browser = await puppateer.launch({ ...browserConfig, headless: false });
@@ -57,10 +50,10 @@ export async function main(): Promise<void> {
   const file = readdirSync(downloadsPath).filter((file) => !downloadsFile.includes(file))[0];
 
   console.log(`downloaded: ${file}`);
-  renameSync(join(downloadsPath, file), paths.WEST_ROXBURY_RAW);
-  console.log(`moved file as: ${paths.WEST_ROXBURY_RAW}`);
+  renameSync(join(downloadsPath, file), paths.BOSTON_RAW);
+  console.log(`moved file as: ${paths.BOSTON_RAW}`);
 
-  const rawDataString = readFileSync(paths.WEST_ROXBURY_RAW, 'utf-8').trim();
+  const rawDataString = readFileSync(paths.BOSTON_RAW, 'utf-8').trim();
   const rawParsedData = CSVToStringArray(rawDataString);
 
   type C = SavedPermitDataStructure<'West Roxbury', 'MA'>;
@@ -167,16 +160,13 @@ export async function main(): Promise<void> {
       return false;
     }
 
-    return (
-      (date.getMonth() + 1 === todayMonth || date.getMonth() + 1 === todayMonth - 1) &&
-      date.getFullYear() === todayYear
-    );
+    return (date.getMonth() + 1 === todayMonth || date.getMonth() + 1 === todayMonth - 1) && date.getFullYear() === todayYear;
   });
 
   const foundCities = Array.from(new Set(data.map((permit) => permit.city)));
   console.log(`found cities: ${foundCities.join(', ')}`);
 
-  writeFileSync(paths.WEST_ROXBURY_DATA, JSON.stringify(data, null, 2));
+  writeFileSync(paths.BOSTON_DATA, JSON.stringify(data, null, 2));
 }
 
 main();

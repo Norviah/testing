@@ -1,11 +1,4 @@
-import {
-  existsSync,
-  mkdirSync,
-  readFileSync,
-  readdirSync,
-  renameSync,
-  writeFileSync,
-} from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, readdirSync, renameSync, writeFileSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { join } from 'node:path';
 import { waitForDownload } from '@/utils/helpers';
@@ -60,7 +53,7 @@ export async function main(): Promise<void> {
   // renameSync(join(downloadsPath, file), paths.WEST_ROXBURY_RAW);
   // console.log(`moved file as: ${paths.WEST_ROXBURY_RAW}`);
 
-  const rawDataString = readFileSync(paths.WEST_ROXBURY_RAW, 'utf-8').trim();
+  const rawDataString = readFileSync(paths.BOSTON_RAW, 'utf-8').trim();
   const rawParsedData = CSVToStringArray(rawDataString);
 
   type C = SavedPermitDataStructure<'West Roxbury', 'MA'>;
@@ -154,5 +147,5 @@ export async function main(): Promise<void> {
     return date.getFullYear() === todayYear;
   });
 
-  writeFileSync(paths.WEST_ROXBURY_DATA, JSON.stringify(data, null, 2));
+  writeFileSync(paths.BOSTON_DATA, JSON.stringify(data, null, 2));
 }

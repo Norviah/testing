@@ -4,11 +4,11 @@ import { CSVToStringArray } from '@/utils/CSVToStringArray';
 import { config as c } from '@/utils/config';
 import { isWithinAmountOfDays, meta } from '@/utils/helpers';
 
+import { getBoard } from '@/companies/legacy/utils/group';
 import * as paths from '@/utils/paths';
 import * as config from './config';
-import { getBoard } from '@/companies/legacy/utils/group';
 
-const rawData = readFileSync(paths.WEST_ROXBURY_RAW, 'utf-8').trim();
+const rawData = readFileSync(paths.BOSTON_RAW, 'utf-8').trim();
 const rawParsedData = CSVToStringArray(rawData);
 const keys = rawParsedData[0];
 
@@ -31,7 +31,7 @@ export async function main(): Promise<void> {
   // PARSING DATA
   // ---
 
-        const board = await getBoard(config.BOARD_ID);
+  const board = await getBoard(config.BOARD_ID);
 
   const data = rawParsedData
     .filter((row, index) => {
@@ -43,9 +43,9 @@ export async function main(): Promise<void> {
         return false;
       }
 
-          if (board.groups.some(g => g.names.includes(row[keys.indexOf('permitnumber')]))) {
-      return false;
-    }
+      if (board.groups.some((g) => g.names.includes(row[keys.indexOf('permitnumber')]))) {
+        return false;
+      }
 
       // const permitTypeDescription = row[keys.indexOf('permittypedescr')].toLowerCase();
       // if (ignoredWorkTypes.includes(permitTypeDescription)) {
@@ -74,7 +74,7 @@ export async function main(): Promise<void> {
       .replace(/[\n;]/g, ' ');
   });
 
-  writeFileSync(paths.WEST_ROXBURY_DATA, lines.join('\n'));
+  writeFileSync(paths.BOSTON_DATA, lines.join('\n'));
 
   // ---
   // PUSHING DATA

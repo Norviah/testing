@@ -37,9 +37,9 @@ export const STOUGHTON_PDF: string = join(STOUGHTON, 'data.pdf');
 export const STOUGHTON_PICTURES: string = join(STOUGHTON, 'pictures');
 export const STOUGHTON_COMBINED_PICTURE: string = join(STOUGHTON, 'combined.png');
 
-export const WEST_ROXBURY: string = join(PERMITS, 'west-roxbury');
-export const WEST_ROXBURY_RAW: string = join(WEST_ROXBURY, 'raw.csv');
-export const WEST_ROXBURY_DATA: string = join(WEST_ROXBURY, 'data.json');
+export const BOSTON: string = join(PERMITS, 'boston');
+export const BOSTON_RAW: string = join(BOSTON, 'raw.csv');
+export const BOSTON_DATA: string = join(BOSTON, 'data.json');
 
 export const LEXINGTON: string = join(PERMITS, 'lexington');
 export const LEXINGTON_RAW: string = join(LEXINGTON, 'raw.csv');
