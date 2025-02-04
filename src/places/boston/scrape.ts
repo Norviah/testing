@@ -53,7 +53,7 @@ export async function main(): Promise<void> {
     mkdirSync(paths.BOSTON, { recursive: true });
   }
 
-  const browser = await puppateer.launch({ ...browserConfig, headless: false });
+  const browser = await puppateer.launch({ ...browserConfig });
   const page = await browser.newPage();
 
   await page.goto(
