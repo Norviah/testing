@@ -218,5 +218,3 @@ function parse(c: string) {
 
   return parsed === '' ? 'Boston' : capitalizeAllWords(parsed);
 }
-
-main();
