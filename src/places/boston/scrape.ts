@@ -6,6 +6,7 @@ import { browserConfig } from '@/utils/config';
 import puppateer, { Page } from 'puppeteer';
 
 import { SavedPermitDataStructure } from '@/types';
+import { logger } from '@/utils/logger';
 import * as paths from '@/utils/paths';
 
 // import type { SavedPermitDataStructure } from '@/types';
@@ -18,7 +19,7 @@ const LONG_DELAY = 2000;
 const SHORT_DELAY = 1000;
 
 const date = new Date();
-const oldestAllowedDate = new Date(date.getFullYear(), date.getMonth(), 1);
+const oldestAllowedDate = new Date(date.getFullYear(), date.getMonth() - 1, 1);
 
 const KEYS: (keyof SavedPermitDataStructure<string, 'MA'> | '_id' | 'ward')[] = [
   '_id',
@@ -102,6 +103,7 @@ export async function main(): Promise<void> {
 
     if (!finished) {
       await nextButton.click();
+      logger.info('next page');
       await wait(SHORT_DELAY);
     }
   } while (!finished);
@@ -180,6 +182,7 @@ async function scrape(page: Page) {
       parsed.description?.toLowerCase().includes('build')
     ) {
       parsedData.push(parsed as SavedPermitDataStructure<string, 'MA'>);
+      logger.success(`scraped ${parsed.permitnumber}`);
     }
   }
 
@@ -207,14 +210,29 @@ function parse(c: string) {
     return null;
   }
 
-  const rawParsed = c
+  const parsed = c
     .replace(/[\/]+$/, '')
     .replace(/[^A-Za-z\/() \s']/g, '')
     .replace(/(^|\/)boston(\/|$)/gi, '')
     .trim()
     .toLowerCase();
 
-  const parsed = c.toLowerCase().includes('boston') ? rawParsed : 'boston, ' + rawParsed;
+  // const parsed = c.toLowerCase().includes('boston') ? rawParsed : 'boston, ' + rawParsed;
+  const final = parsed === '' ? 'Boston' : capitalizeAllWords(parsed);
 
-  return parsed === '' ? 'Boston' : capitalizeAllWords(parsed);
+  if (final.toLowerCase() === "Boston's Historic North End".toLowerCase()) {
+    return 'North End';
+  }
+
+  if (final.toLowerCase() === 'E Boston'.toLowerCase()) {
+    return 'East Boston';
+  }
+
+  if (final.toLowerCase() === 'Northend'.toLowerCase()) {
+    return 'North End';
+  }
+
+  return final;
 }
+
+main();
