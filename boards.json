@@ -446,5 +446,397 @@
     "type": "Building",
     "folder": "15054099",
     "groupId": "building_permits_mkmtn214"
+  },
+  {
+    "name": "Boston",
+    "id": "8405750061",
+    "type": "Demo",
+    "folder": "15054091",
+    "groupId": "demo_permits_mkmwb616"
+  },
+  {
+    "name": "Boston",
+    "id": "8405758033",
+    "type": "Building",
+    "folder": "15054091",
+    "groupId": "building_permits_mkmw30dv"
+  },
+  {
+    "name": "Boston",
+    "id": "8405763998",
+    "type": "Demo",
+    "folder": "15054099",
+    "groupId": "demo_permits_mkmw8m1d"
+  },
+  {
+    "name": "Boston",
+    "id": "8405769164",
+    "type": "Building",
+    "folder": "15054099",
+    "groupId": "building_permits_mkmwgz6t"
+  },
+  {
+    "name": "Hyde Park",
+    "id": "8405776205",
+    "type": "Demo",
+    "folder": "15054091",
+    "groupId": "demo_permits_mkmweycw"
+  },
+  {
+    "name": "Hyde Park",
+    "id": "8405780840",
+    "type": "Building",
+    "folder": "15054091",
+    "groupId": "building_permits_mkmw458e"
+  },
+  {
+    "name": "Hyde Park",
+    "id": "8405783735",
+    "type": "Demo",
+    "folder": "15054099",
+    "groupId": "demo_permits_mkmwajm"
+  },
+  {
+    "name": "Hyde Park",
+    "id": "8405786257",
+    "type": "Building",
+    "folder": "15054099",
+    "groupId": "building_permits_mkmwp31t"
+  },
+  {
+    "name": "Roxbury",
+    "id": "8405789384",
+    "type": "Demo",
+    "folder": "15054091",
+    "groupId": "demo_permits_mkmwt63s"
+  },
+  {
+    "name": "Roxbury",
+    "id": "8405792515",
+    "type": "Building",
+    "folder": "15054091",
+    "groupId": "building_permits_mkmw8drv"
+  },
+  {
+    "name": "Roxbury",
+    "id": "8405795762",
+    "type": "Demo",
+    "folder": "15054099",
+    "groupId": "demo_permits_mkmwztrz"
+  },
+  {
+    "name": "Roxbury",
+    "id": "8405801153",
+    "type": "Building",
+    "folder": "15054099",
+    "groupId": "building_permits_mkmw9egh"
+  },
+  {
+    "name": "Dorchester",
+    "id": "8405806722",
+    "type": "Demo",
+    "folder": "15054091",
+    "groupId": "demo_permits_mkmw7q55"
+  },
+  {
+    "name": "Dorchester",
+    "id": "8405810023",
+    "type": "Building",
+    "folder": "15054091",
+    "groupId": "building_permits_mkmwvgea"
+  },
+  {
+    "name": "Dorchester",
+    "id": "8405816586",
+    "type": "Demo",
+    "folder": "15054099",
+    "groupId": "demo_permits_mkmw4pvk"
+  },
+  {
+    "name": "Dorchester",
+    "id": "8405819770",
+    "type": "Building",
+    "folder": "15054099",
+    "groupId": "building_permits_mkmwm7kd"
+  },
+  {
+    "name": "East Boston",
+    "id": "8405826527",
+    "type": "Demo",
+    "folder": "15054091",
+    "groupId": "demo_permits_mkmwmfs0"
+  },
+  {
+    "name": "East Boston",
+    "id": "8405830754",
+    "type": "Building",
+    "folder": "15054091",
+    "groupId": "building_permits_mkmwmnvm"
+  },
+  {
+    "name": "East Boston",
+    "id": "8405834868",
+    "type": "Demo",
+    "folder": "15054099",
+    "groupId": "demo_permits_mkmw92yz"
+  },
+  {
+    "name": "East Boston",
+    "id": "8405837368",
+    "type": "Building",
+    "folder": "15054099",
+    "groupId": "building_permits_mkmwkrba"
+  },
+  {
+    "name": "Mattapan",
+    "id": "8405840264",
+    "type": "Demo",
+    "folder": "15054091",
+    "groupId": "demo_permits_mkmweqhp"
+  },
+  {
+    "name": "Mattapan",
+    "id": "8405843842",
+    "type": "Building",
+    "folder": "15054091",
+    "groupId": "building_permits_mkmwxyvz"
+  },
+  {
+    "name": "Mattapan",
+    "id": "8405846453",
+    "type": "Demo",
+    "folder": "15054099",
+    "groupId": "demo_permits_mkmwsf0r"
+  },
+  {
+    "name": "Mattapan",
+    "id": "8405848887",
+    "type": "Building",
+    "folder": "15054099",
+    "groupId": "building_permits_mkmw5dkb"
+  },
+  {
+    "name": "Brighton",
+    "id": "8405851839",
+    "type": "Demo",
+    "folder": "15054091",
+    "groupId": "demo_permits_mkmwdef1"
+  },
+  {
+    "name": "Brighton",
+    "id": "8405854196",
+    "type": "Building",
+    "folder": "15054091",
+    "groupId": "building_permits_mkmwarfc"
+  },
+  {
+    "name": "Brighton",
+    "id": "8405856630",
+    "type": "Demo",
+    "folder": "15054099",
+    "groupId": "demo_permits_mkmw6trk"
+  },
+  {
+    "name": "Brighton",
+    "id": "8405860293",
+    "type": "Building",
+    "folder": "15054099",
+    "groupId": "building_permits_mkmwgrwg"
+  },
+  {
+    "name": "Allston",
+    "id": "8405865343",
+    "type": "Demo",
+    "folder": "15054091",
+    "groupId": "demo_permits_mkmw4z7x"
+  },
+  {
+    "name": "Allston",
+    "id": "8408021169",
+    "type": "Building",
+    "folder": "15054091",
+    "groupId": "building_permits_mkmw4bf3"
+  },
+  {
+    "name": "Allston",
+    "id": "8408035603",
+    "type": "Demo",
+    "folder": "15054099",
+    "groupId": "demo_permits_mkmw54f9"
+  },
+  {
+    "name": "Allston",
+    "id": "8408046772",
+    "type": "Building",
+    "folder": "15054099",
+    "groupId": "building_permits_mkmwv0w4"
+  },
+  {
+    "name": "South Boston",
+    "id": "8408065818",
+    "type": "Demo",
+    "folder": "15054091",
+    "groupId": "demo_permits_mkmwcg5r"
+  },
+  {
+    "name": "South Boston",
+    "id": "8408091896",
+    "type": "Building",
+    "folder": "15054091",
+    "groupId": "building_permits_mkmw4jst"
+  },
+  {
+    "name": "South Boston",
+    "id": "8408107589",
+    "type": "Demo",
+    "folder": "15054099",
+    "groupId": "demo_permits_mkmwqh4v"
+  },
+  {
+    "name": "South Boston",
+    "id": "8408131196",
+    "type": "Building",
+    "folder": "15054099",
+    "groupId": "building_permits_mkmwpb6c"
+  },
+  {
+    "name": "West End",
+    "id": "8408150483",
+    "type": "Demo",
+    "folder": "15054091",
+    "groupId": "demo_permits_mkmwcqjf"
+  },
+  {
+    "name": "West End",
+    "id": "8408169565",
+    "type": "Building",
+    "folder": "15054091",
+    "groupId": "building_permits_mkmwky6z"
+  },
+  {
+    "name": "West End",
+    "id": "8408186832",
+    "type": "Demo",
+    "folder": "15054099",
+    "groupId": "demo_permits_mkmwagz2"
+  },
+  {
+    "name": "West End",
+    "id": "8408203334",
+    "type": "Building",
+    "folder": "15054099",
+    "groupId": "building_permits_mkmwmqsd"
+  },
+  {
+    "name": "Downtown/Financial District",
+    "id": "8408222645",
+    "type": "Demo",
+    "folder": "15054091",
+    "groupId": "demo_permits_mkmwvfeh"
+  },
+  {
+    "name": "Downtown/Financial District",
+    "id": "8408249417",
+    "type": "Building",
+    "folder": "15054091",
+    "groupId": "building_permits_mkmw6erd"
+  },
+  {
+    "name": "Downtown/Financial District",
+    "id": "8408264657",
+    "type": "Demo",
+    "folder": "15054099",
+    "groupId": "demo_permits_mkmw4rrm"
+  },
+  {
+    "name": "Downtown/Financial District",
+    "id": "8408277135",
+    "type": "Building",
+    "folder": "15054099",
+    "groupId": "building_permits_mkmwaxxt"
+  },
+  {
+    "name": "Charlestown",
+    "id": "8408287538",
+    "type": "Demo",
+    "folder": "15054091",
+    "groupId": "demo_permits_mkmwd3wn"
+  },
+  {
+    "name": "Charlestown",
+    "id": "8408301039",
+    "type": "Building",
+    "folder": "15054091",
+    "groupId": "building_permits_mkmw4wy8"
+  },
+  {
+    "name": "Charlestown",
+    "id": "8408314193",
+    "type": "Demo",
+    "folder": "15054099",
+    "groupId": "demo_permits_mkmw83j1"
+  },
+  {
+    "name": "Charlestown",
+    "id": "8408327701",
+    "type": "Building",
+    "folder": "15054099",
+    "groupId": "building_permits_mkmw3g4k"
+  },
+  {
+    "name": "Roslindale",
+    "id": "8408355607",
+    "type": "Demo",
+    "folder": "15054091",
+    "groupId": "demo_permits_mkmw41nm"
+  },
+  {
+    "name": "Roslindale",
+    "id": "8408374233",
+    "type": "Building",
+    "folder": "15054091",
+    "groupId": "building_permits_mkmwry6q"
+  },
+  {
+    "name": "Roslindale",
+    "id": "8408393568",
+    "type": "Demo",
+    "folder": "15054099",
+    "groupId": "demo_permits_mkmw82az"
+  },
+  {
+    "name": "Roslindale",
+    "id": "8408404288",
+    "type": "Building",
+    "folder": "15054099",
+    "groupId": "building_permits_mkmw5zh4"
+  },
+  {
+    "name": "Mission Hill",
+    "id": "8408421040",
+    "type": "Demo",
+    "folder": "15054091",
+    "groupId": "demo_permits_mkmwnmrn"
+  },
+  {
+    "name": "Mission Hill",
+    "id": "8408434924",
+    "type": "Building",
+    "folder": "15054091",
+    "groupId": "building_permits_mkmwbxye"
+  },
+  {
+    "name": "Mission Hill",
+    "id": "8408449344",
+    "type": "Demo",
+    "folder": "15054099",
+    "groupId": "demo_permits_mkmwa9sw"
+  },
+  {
+    "name": "Mission Hill",
+    "id": "8408463889",
+    "type": "Building",
+    "folder": "15054099",
+    "groupId": "building_permits_mkmwayk7"
   }
 ]
