@@ -137,13 +137,7 @@ async function pushFolder(
   createPrisma: boolean,
 ) {
   const pushedDemoPermits = await pushPermits(city, demoPermits, 'Demo', FOLDER_ID, createPrisma);
-  const pushedBuildingPermits = await pushPermits(
-    city,
-    buildingPermits,
-    'Building',
-    FOLDER_ID,
-    createPrisma,
-  );
+  const pushedBuildingPermits = await pushPermits(city, buildingPermits, 'Building', FOLDER_ID, createPrisma);
 
   return {
     demo: pushedDemoPermits,
@@ -159,13 +153,9 @@ async function pushPermits(
   createPrisma: boolean,
 ): Promise<SavedPermitDataStructureWithDate<string, string>[]> {
   const pushedIds: SavedPermitDataStructureWithDate<string, string>[] = [];
-  let boardReference = boards.find(
-    (b) => b.name === city.name && b.type === type && b.folder === FOLDER_ID,
-  );
+  let boardReference = boards.find((b) => b.name === city.name && b.type === type && b.folder === FOLDER_ID);
   let created = false;
-  const BOARD_ID = boardReference
-    ? boardReference.id
-    : await createBoard(`${city.name} ${type} Permits`, FOLDER_ID);
+  const BOARD_ID = boardReference ? boardReference.id : await createBoard(`${city.name} ${type} Permits`, FOLDER_ID);
 
   if (!boardReference) {
     boardReference = { name: city.name, id: BOARD_ID, type, folder: FOLDER_ID };
@@ -196,9 +186,7 @@ async function pushPermits(
   if (!buildingPermitGroup) {
     metaInfo = await ensureGroup([], BOARD_ID, metaInfo, `${type} Permits`);
     board = await getBoard(BOARD_ID);
-    buildingPermitGroup = board.groups.find(
-      (g) => g.title.toLowerCase() === `${type} Permits`.toLowerCase(),
-    );
+    buildingPermitGroup = board.groups.find((g) => g.title.toLowerCase() === `${type} Permits`.toLowerCase());
     boardReference.groupId = buildingPermitGroup!.id;
   }
 
@@ -306,7 +294,7 @@ const keys = [
 async function createBoard(name: string, FOLDER_ID: string): Promise<string> {
   const query = `
     mutation {
-      create_board (board_name: "${name}", board_kind: private, folder_id: ${FOLDER_ID}, board_owner_ids: [61305113,58415039,23328368,62465198]) {
+      create_board (board_name: "${name}", board_kind: private, folder_id: ${FOLDER_ID}, board_owner_ids: [61305113,58415039,23328368,62465198,52821049,47468980,65233535]) {
         id
       }
     }
