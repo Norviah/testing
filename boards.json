@@ -838,5 +838,33 @@
     "type": "Building",
     "folder": "15054099",
     "groupId": "building_permits_mkmwayk7"
+  },
+  {
+    "name": "Somerville",
+    "id": "8533640824",
+    "type": "Demo",
+    "folder": "15054091",
+    "groupId": "demo_permits_mknbm131"
+  },
+  {
+    "name": "Somerville",
+    "id": "8533649219",
+    "type": "Building",
+    "folder": "15054091",
+    "groupId": "building_permits_mknbg9ye"
+  },
+  {
+    "name": "Somerville",
+    "id": "8533665736",
+    "type": "Demo",
+    "folder": "15054099",
+    "groupId": "demo_permits_mknbve52"
+  },
+  {
+    "name": "Somerville",
+    "id": "8533670280",
+    "type": "Building",
+    "folder": "15054099",
+    "groupId": "building_permits_mknbkad2"
   }
 ]
