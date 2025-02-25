@@ -866,5 +866,61 @@
     "type": "Building",
     "folder": "15054099",
     "groupId": "building_permits_mknbkad2"
+  },
+  {
+    "name": "Downtown",
+    "id": "8533996117",
+    "type": "Demo",
+    "folder": "15054091",
+    "groupId": "demo_permits_mknbvt1z"
+  },
+  {
+    "name": "Downtown",
+    "id": "8534003289",
+    "type": "Building",
+    "folder": "15054091",
+    "groupId": "building_permits_mknbgesw"
+  },
+  {
+    "name": "Downtown",
+    "id": "8534006972",
+    "type": "Demo",
+    "folder": "15054099",
+    "groupId": "demo_permits_mknbh5es"
+  },
+  {
+    "name": "Downtown",
+    "id": "8534009869",
+    "type": "Building",
+    "folder": "15054099",
+    "groupId": "building_permits_mknbxde8"
+  },
+  {
+    "name": "Theater District",
+    "id": "8534012524",
+    "type": "Demo",
+    "folder": "15054091",
+    "groupId": "demo_permits_mknb61p2"
+  },
+  {
+    "name": "Theater District",
+    "id": "8534016439",
+    "type": "Building",
+    "folder": "15054091",
+    "groupId": "building_permits_mknb9q3s"
+  },
+  {
+    "name": "Theater District",
+    "id": "8534020160",
+    "type": "Demo",
+    "folder": "15054099",
+    "groupId": "demo_permits_mknbkjp3"
+  },
+  {
+    "name": "Theater District",
+    "id": "8534023424",
+    "type": "Building",
+    "folder": "15054099",
+    "groupId": "building_permits_mknbr3vf"
   }
 ]
