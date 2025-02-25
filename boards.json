@@ -866,5 +866,33 @@
     "type": "Building",
     "folder": "15054099",
     "groupId": "building_permits_mknbkad2"
+  },
+  {
+    "name": "Framingham",
+    "id": "8558099912",
+    "type": "Demo",
+    "folder": "15054091",
+    "groupId": "group_mkngk3t4"
+  },
+  {
+    "name": "Framingham",
+    "id": "8558103496",
+    "type": "Building",
+    "folder": "15054091",
+    "groupId": "group_mkngnf77"
+  },
+  {
+    "name": "Framingham",
+    "id": "8558116900",
+    "type": "Demo",
+    "folder": "15054099",
+    "groupId": "group_mkngg49z"
+  },
+  {
+    "name": "Framingham",
+    "id": "8558120767",
+    "type": "Building",
+    "folder": "15054099",
+    "groupId": "group_mkngm34v"
   }
 ]
