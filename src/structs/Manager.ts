@@ -67,7 +67,7 @@ export class Manager {
   }
 
   public async Scrape(): Promise<void> {
-    const browser = await puppeteer.launch({ ...browserConfig, headless: false });
+    const browser = await puppeteer.launch(browserConfig);
     const failedWebsites: Website<string, string>[] = [];
 
     for (const website of this.handler.GetModules()) {

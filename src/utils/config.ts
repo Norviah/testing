@@ -34,7 +34,7 @@ export const config = schema.parse(JSON.parse(readFileSync(paths.CONFIG, 'utf-8'
 export const browserConfig =
   config.OS === 'windows'
     ? {
-        headless: true,
+        headless: false,
       }
     : {
         headless: true,
