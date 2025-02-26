@@ -52,7 +52,6 @@
     "@types/imap": "^0.8.40",
     "app-root-path": "^3.1.0",
     "bcrypt": "^5.1.1",
-    "canvas": "^2.11.2",
     "exponential-backoff": "^3.1.1",
     "imap": "^0.8.19",
     "jimp": "^1.6.0",
