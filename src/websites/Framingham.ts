@@ -1,14 +1,13 @@
 import { Website } from '@/structs/Website';
 
 import type { SavedPermitDataStructure } from '@/types';
-import { backOff } from 'exponential-backoff';
 import type { ElementHandle, Page } from 'puppeteer';
 
 export default class Framingham extends Website<'Framingham', 'MA'> {
   /**
    * Whether if the manager should scrape this website.
    */
-  public readonly enabled = false;
+  public readonly enabled = true;
 
   /**
    * The base URL of the website.
@@ -90,6 +89,7 @@ export default class Framingham extends Website<'Framingham', 'MA'> {
       owner: name,
       address: address,
       link: href,
+      issued_date: issuedDate,
       city: 'Framingham',
       state: 'MA',
     };

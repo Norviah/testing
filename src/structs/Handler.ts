@@ -8,11 +8,6 @@ import * as paths from '@/lib/paths';
 
 export class Handler {
   /**
-   * The base directory that contains all website modules.
-   */
-  private dir: string = paths.WEBSITES;
-
-  /**
    * Whether if the handler has been initialized.
    */
   private isInitialized = false;
@@ -38,13 +33,19 @@ export class Handler {
     return this.websites;
   }
 
+  public get dir(): string {
+    return join(__dirname, '..', 'websites');
+  }
+
   /**
    * Registers all website modules.
    *
    * @throws {Error} If a module does not export a valid class.
    */
   public RegisterAll(): void {
-    const files = readdirSync(this.dir).filter((file) => file.endsWith('.js') || file.endsWith('.ts'));
+    const files = readdirSync(this.dir).filter(
+      (file) => file.endsWith('.js') || file.endsWith('.ts'),
+    );
 
     for (const file of files) {
       this.Register(file);
@@ -60,7 +61,7 @@ export class Handler {
    * @throws {Error} If the module does not export a valid class.
    */
   private Register(file: string): void {
-    const data: unknown = require(join(paths.WEBSITES, file))?.default;
+    const data: unknown = require(join(this.dir, file))?.default;
 
     if (!this.Validate(data)) {
       throw new Error(`File does not export a valid class: ${file}`);
@@ -91,7 +92,11 @@ export class Handler {
    * }
    * ```
    */
-  private Validate(object: unknown): object is new (...args: ConstructorParameters<typeof Website>) => Website<string, string> {
+  private Validate(
+    object: unknown,
+  ): object is new (
+    ...args: ConstructorParameters<typeof Website>
+  ) => Website<string, string> {
     return typeof object === 'function' && object.prototype instanceof Website;
   }
 }

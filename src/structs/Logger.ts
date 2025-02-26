@@ -42,7 +42,14 @@ export class Logger extends BaseLogger {
    * ```
    */
   public constructor() {
-    super({ write: true, dir: join('logs', `${DATE.toLocaleString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}`, TIMESTAMP) });
+    super({
+      write: true,
+      dir: join(
+        'logs',
+        `${DATE.toLocaleString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}`,
+        TIMESTAMP,
+      ),
+    });
   }
 
   /**
@@ -95,7 +102,10 @@ export class Logger extends BaseLogger {
    * // `LoggingOptions` interface, as it inherits `WriteOptions`.
    * ```
    */
-  public write(content: string | string[], options: Partial<LoggingOptions> = { colors: this.options.colors }): void {
+  public write(
+    content: string | string[],
+    options: Partial<LoggingOptions> = { colors: this.options.colors },
+  ): void {
     const log: string = `${this.generate(content, options)}\n`;
 
     // References the directory to save the log into.
@@ -133,6 +143,10 @@ export class Logger extends BaseLogger {
    * ```
    */
   success(content: string | string[], options?: Partial<LoggingOptions>): void {
-    this.print(content, { title: 'success', colors: { title: 'green', ...options?.colors }, ...options });
+    this.print(content, {
+      title: 'success',
+      colors: { title: 'green', ...options?.colors },
+      ...options,
+    });
   }
 }

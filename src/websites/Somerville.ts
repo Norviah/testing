@@ -7,7 +7,7 @@ export default class Somerville extends Website<'Somerville', 'MA'> {
   /**
    * Whether if the manager should scrape this website.
    */
-  public readonly enabled: boolean = false;
+  public readonly enabled: boolean = true;
 
   /**
    * The base URL of the website.
