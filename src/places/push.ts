@@ -72,6 +72,42 @@ export async function push(file: string) {
   }
 }
 
+export async function pushData(raw: SavedPermitDataStructure<string, string>[]) {
+  const data: SavedPermitDataStructureWithDate<string, string>[] = raw
+    .map((permit) => {
+      const { issued_date, expiration_date, applied_date, finalized_date, ...rest } = permit;
+
+      return {
+        issued_date: issued_date ? new Date(issued_date) : null,
+        expiration_date: expiration_date ? new Date(expiration_date) : null,
+        applied_date: applied_date ? new Date(applied_date) : null,
+        finalized_date: finalized_date ? new Date(finalized_date) : null,
+        ...rest,
+      };
+    })
+    .sort((a, b) => {
+      if (!a.issued_date || !b.issued_date) {
+        return 0;
+      }
+
+      return b.issued_date.getTime() - a.issued_date.getTime();
+    });
+
+  const cities: Record<string, SavedPermitDataStructureWithDate<string, string>[]> = {};
+
+  for (const permit of data) {
+    if (!cities[permit.city]) {
+      cities[permit.city] = [];
+    }
+
+    cities[permit.city].push(permit);
+  }
+
+  for (const city in cities) {
+    await pushCity(cities[city]);
+  }
+}
+
 async function pushCity(raw: SavedPermitDataStructureWithDate<string, string>[]) {
   const state = await prisma.state.upsert({
     where: {
@@ -137,7 +173,13 @@ async function pushFolder(
   createPrisma: boolean,
 ) {
   const pushedDemoPermits = await pushPermits(city, demoPermits, 'Demo', FOLDER_ID, createPrisma);
-  const pushedBuildingPermits = await pushPermits(city, buildingPermits, 'Building', FOLDER_ID, createPrisma);
+  const pushedBuildingPermits = await pushPermits(
+    city,
+    buildingPermits,
+    'Building',
+    FOLDER_ID,
+    createPrisma,
+  );
 
   return {
     demo: pushedDemoPermits,
@@ -153,9 +195,13 @@ async function pushPermits(
   createPrisma: boolean,
 ): Promise<SavedPermitDataStructureWithDate<string, string>[]> {
   const pushedIds: SavedPermitDataStructureWithDate<string, string>[] = [];
-  let boardReference = boards.find((b) => b.name === city.name && b.type === type && b.folder === FOLDER_ID);
+  let boardReference = boards.find(
+    (b) => b.name === city.name && b.type === type && b.folder === FOLDER_ID,
+  );
   let created = false;
-  const BOARD_ID = boardReference ? boardReference.id : await createBoard(`${city.name} ${type} Permits`, FOLDER_ID);
+  const BOARD_ID = boardReference
+    ? boardReference.id
+    : await createBoard(`${city.name} ${type} Permits`, FOLDER_ID);
 
   if (!boardReference) {
     boardReference = { name: city.name, id: BOARD_ID, type, folder: FOLDER_ID };
@@ -186,7 +232,9 @@ async function pushPermits(
   if (!buildingPermitGroup) {
     metaInfo = await ensureGroup([], BOARD_ID, metaInfo, `${type} Permits`);
     board = await getBoard(BOARD_ID);
-    buildingPermitGroup = board.groups.find((g) => g.title.toLowerCase() === `${type} Permits`.toLowerCase());
+    buildingPermitGroup = board.groups.find(
+      (g) => g.title.toLowerCase() === `${type} Permits`.toLowerCase(),
+    );
     boardReference.groupId = buildingPermitGroup!.id;
   }
 
