@@ -174,21 +174,23 @@ export async function parse() {
   // DD-DDD-DDDDD ADDRESS, have to filter out the random digits
 
   for (const d of data) {
-    parsedData.push({
-      permitnumber: d[0],
-      issued_date: /^\d{2}\/\d{2}\/\d{4}$/.test(d[2])
-        ? d[2] === '00/00/0000'
-          ? undefined
-          : d[2]
-        : undefined,
-      applicant: d[4],
-      owner: d[5],
-      address: /(\d+-?)+ (.*)/.exec(d[6])![2],
-      description: d[7],
-      total_fees: d[8],
-      city: 'Stoughton',
-      state: 'MA',
-    });
+    try {
+      parsedData.push({
+        permitnumber: d[0],
+        issued_date: /^\d{2}\/\d{2}\/\d{4}$/.test(d[2])
+          ? d[2] === '00/00/0000'
+            ? undefined
+            : d[2]
+          : undefined,
+        applicant: d[4],
+        owner: d[5],
+        address: /(\d+-?)+ (.*)/.exec(d[6])![2],
+        description: d[7],
+        total_fees: d[8],
+        city: 'Stoughton',
+        state: 'MA',
+      });
+    } catch {}
   }
 
   writeFileSync(paths.STOUGHTON_DATA, JSON.stringify(parsedData, null, 2));

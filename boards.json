@@ -950,5 +950,95 @@
     "type": "Building",
     "folder": "15054099",
     "groupId": "group_mkngm34v"
+  },
+  {
+    "name": "Brighton/Allston",
+    "type": "Demo",
+    "groupId": "group_mknjj1vp",
+    "folder": "15054091",
+    "id": "8586995753"
+  },
+  {
+    "name": "Brighton/Allston",
+    "type": "Building",
+    "groupId": "group_mknjma4d",
+    "folder": "15054091",
+    "id": "8587007280"
+  },
+  {
+    "name": "Brighton/Allston",
+    "type": "Demo",
+    "groupId": "group_mknjd6nj",
+    "folder": "15054099",
+    "id": "8587017221",
+    "demo": "Demo"
+  },
+  {
+    "name": "Brighton/Allston",
+    "type": "Building",
+    "groupId": "group_mknjazq7",
+    "folder": "15054099",
+    "id": "8587030091",
+    "demo": "Building"
+  },
+  {
+    "name": "Chestnut Hill",
+    "type": "Demo",
+    "groupId": "group_mknrr8aq",
+    "folder": "15054091",
+    "id": "8630189819"
+  },
+  {
+    "name": "Chestnut Hill",
+    "type": "Building",
+    "groupId": "group_mknr3tq7",
+    "folder": "15054091",
+    "id": "8630202527"
+  },
+  {
+    "name": "Chestnut Hill",
+    "type": "Demo",
+    "groupId": "group_mknr38pr",
+    "folder": "15054099",
+    "id": "8630215157",
+    "demo": "Demo"
+  },
+  {
+    "name": "Chestnut Hill",
+    "type": "Building",
+    "groupId": "group_mknr1915",
+    "folder": "15054099",
+    "id": "8630226232",
+    "demo": "Building"
+  },
+  {
+    "name": "Waterfront",
+    "type": "Demo",
+    "groupId": "group_mkp82jq6",
+    "folder": "15054091",
+    "id": "8754872260"
+  },
+  {
+    "name": "Waterfront",
+    "type": "Building",
+    "groupId": "group_mkp86yck",
+    "folder": "15054091",
+    "id": "8754880253"
+  },
+  {
+    "name": "Waterfront",
+    "type": "Demo",
+    "groupId": "group_mkp8v4dg",
+    "folder": "15054099",
+    "id": "8754886289",
+    "demo": "Demo"
+  },
+  {
+    "name": "Waterfront",
+    "type": "Building",
+    "groupId": "group_mkp8xde3",
+    "folder": "15054099",
+    "id": "8754895369",
+    "demo": "Building"
   }
 ]
