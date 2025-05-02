@@ -1,9 +1,20 @@
 {
   "tasks": {
     "pre": [
+      {
+        "name": "Checking linting",
+        "command": "pnpm run lint:check"
+      },
+      {
+        "name": "Checking formatting",
+        "command": "pnpm run format:check"
+      },
+      {
+        "name": "Building application",
+        "command": "rm -rf dist && pnpm run build:win"
+      }
     ],
-    "post": [
-    ]
+    "post": []
   },
   "provider": {
     "type": "json",
