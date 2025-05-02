@@ -25,8 +25,7 @@
 		"@electron-toolkit/utils": "^4.0.0",
 		"@tailwindcss/vite": "^4.1.5",
 		"electron-updater": "^6.6.2",
-		"tailwindcss": "^4.1.5",
-		"update-electron-app": "^3.1.1"
+		"tailwindcss": "^4.1.5"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",

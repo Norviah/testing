@@ -3,10 +3,19 @@ import { electronApp, is, optimizer } from '@electron-toolkit/utils';
 import { BrowserWindow, app, ipcMain, shell } from 'electron';
 import icon from '../../resources/icon.png?asset';
 
-import updater from 'update-electron-app';
+import electronUpdater, { type AppUpdater } from 'electron-updater';
+
+export function getAutoUpdater(): AppUpdater {
+  // Using destructuring to access autoUpdater due to the CommonJS module of 'electron-updater'.
+  // It is a workaround for ESM compatibility issues, see https://github.com/electron-userland/electron-builder/issues/7976.
+  const { autoUpdater } = electronUpdater;
+  return autoUpdater;
+}
 
 function createWindow(): void {
-  updater.updateElectronApp();
+  const updater = getAutoUpdater();
+  updater.forceDevUpdateConfig = true;
+  updater.checkForUpdates().then((x) => console.log(x));
 
   // Create the browser window.
   const mainWindow = new BrowserWindow({
