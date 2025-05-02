@@ -4,7 +4,7 @@
 		"src/renderer/**/*.ts",
 		"src/renderer/**/*.tsx",
 		"src/preload/*.d.ts"
-  ],
+	],
 	"compilerOptions": {
 		"composite": true,
 		"jsx": "react-jsx",
