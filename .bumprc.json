@@ -2,7 +2,8 @@
   "tasks": {
     "pre": [
     ],
-    "post": []
+    "post": [
+    ]
   },
   "provider": {
     "type": "json",
