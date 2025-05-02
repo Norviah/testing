@@ -1,3 +1,9 @@
+## [v1.2.0](https://github.com/Norviah/testing/compare/dist/builder-debug.yml...v1.2.0) (2025-05-02)
+
+- 2 <code>[5d8ec5d](https://github.com/Norviah/testing/commit/5d8ec5d3c2e8af6d273f51aa61fe02d892b5d9be)</code>
+
+## [dist/builder-debug.yml](https://github.com/Norviah/testing/compare/v1.1.0...dist/builder-debug.yml) (2025-05-02)
+
 ## v1.1.0 (2025-05-02)
 
 - d <code>[4651dba](https://github.com/Norviah/testing/commit/4651dba3fc2bfeb13f7d9d8964d1f2936297d421)</code>
