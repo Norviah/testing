@@ -1,5 +1,9 @@
 {
-  "tasks": {},
+  "tasks": {
+    "pre": [
+    ],
+    "post": []
+  },
   "provider": {
     "type": "json",
     "path": "package.json",
@@ -8,35 +12,38 @@
   "types": [
     {
       "type": "feat",
-      "name": "Features"
+      "name": "Features",
+      "hidden": false
     },
     {
       "type": "fix",
-      "name": "Bug Fixes"
+      "name": "Bug Fixes",
+      "hidden": false
     },
     {
       "type": "revert",
-      "name": "Reverted"
+      "name": "Reverted",
+      "hidden": false
     },
     {
       "type": "refactor",
-      "name": "Refactor"
+      "name": "Refactor",
+      "hidden": false
     },
     {
       "type": "build",
-      "name": "Build System"
+      "name": "Build System",
+      "hidden": false
     },
     {
       "type": "init",
-      "name": "Init"
+      "name": "Init",
+      "hidden": false
     },
     {
       "type": "remove",
-      "name": "Removed Features"
-    },
-    {
-      "type": "deps",
-      "name": "Dependencies"
+      "name": "Removed Features",
+      "hidden": false
     },
     {
       "type": "chore",
@@ -47,13 +54,13 @@
       "hidden": true
     }
   ],
-  "prompt": true,
+  "prompt": false,
   "unreleasedHeader": "Unreleased",
   "breakingHeader": "⚠ Breaking Changes",
-  "includeBody": true,
+  "includeBody": false,
   "includeNonConventionalCommits": true,
   "tag": "v{{after}}",
   "releaseSubject": "chore(release): {{tag}}",
   "changelogSubject": "docs(changelog): {{tag}}",
-  "commitOrder": "asc"
+  "commitOrder": "default"
 }

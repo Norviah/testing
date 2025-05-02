@@ -1,8 +1,0 @@
-[ 02-24-2025 4:26 PM ] info: pushed 8 permits to Framingham (Demo - 15054091)
-[ 02-24-2025 4:29 PM ] info: pushed 161 permits to Framingham (Building - 15054091)
-[ 02-24-2025 4:31 PM ] info: pushed 8 permits to Framingham (Demo - 15054099)
-[ 02-24-2025 4:34 PM ] info: pushed 161 permits to Framingham (Building - 15054099)
-[ 02-24-2025 5:23 PM ] info: pushed 0 permits to Somerville (Demo - 15054091)
-[ 02-24-2025 5:23 PM ] info: pushed 6 permits to Somerville (Building - 15054091)
-[ 02-24-2025 5:23 PM ] info: pushed 0 permits to Somerville (Demo - 15054099)
-[ 02-24-2025 5:23 PM ] info: pushed 6 permits to Somerville (Building - 15054099)
