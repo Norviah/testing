@@ -15,11 +15,11 @@
 			}
 		],
 		"post": [
-      {
+			{
 				"name": "Re-building application",
 				"command": "pnpm run build:win"
-      }
-    ]
+			}
+		]
 	},
 	"provider": {
 		"type": "json",
