@@ -10,8 +10,8 @@
 				"command": "pnpm run format:check"
 			},
 			{
-				"name": "Building application",
-				"command": "pnpm run build:win"
+				"name": "Checking application",
+				"command": "pnpm run build"
 			}
 		],
 		"post": [
