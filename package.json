@@ -1,63 +1,60 @@
 {
-  "name": "electron-template",
-  "version": "1.6.0",
-  "description": "A template Electron application with React and TypeScript",
-  "main": "./out/main/index.js",
-  "private": "true",
-  "scripts": {
-    "check": "biome check --write",
-    "format:write": "biome format --write",
-    "format:check": "biome format",
-    "lint:write": "biome lint --write",
-    "lint:check": "biome lint",
-    "typecheck:node": "tsc --noEmit -p tsconfig.node.json --composite false",
-    "typecheck:web": "tsc --noEmit -p tsconfig.web.json --composite false",
-    "typecheck": "npm run typecheck:node && npm run typecheck:web",
-    "start": "electron-vite preview",
-    "dev": "electron-vite dev",
-    "build": "npm run typecheck && electron-vite build",
-    "postinstall": "electron-builder install-app-deps",
-    "build:unpack": "npm run build && electron-builder --dir",
-    "build:win": "npm run build && electron-builder --win",
-    "build:mac": "electron-vite build && electron-builder --mac",
-    "build:linux": "electron-vite build && electron-builder --linux"
-  },
-  "dependencies": {
-    "@electron-toolkit/preload": "^3.0.2",
-    "@electron-toolkit/utils": "^4.0.0",
-    "@tailwindcss/vite": "^4.1.5",
-    "electron-updater": "^6.6.2",
-    "tailwindcss": "^4.1.5"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "1.9.4",
-    "@electron-toolkit/tsconfig": "^1.0.1",
-    "@norviah/bump": "^1.4.1",
-    "@types/node": "^22.15.3",
-    "@types/react": "^19.1.2",
-    "@types/react-dom": "^19.1.2",
-    "@vitejs/plugin-react": "^4.4.1",
-    "electron": "^36.0.0",
-    "electron-builder": "^26.0.12",
-    "electron-vite": "^3.1.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "typescript": "^5.8.3",
-    "vite": "^6.3.3"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "electron",
-      "esbuild"
-    ]
-  },
-  "homepage": "https://github.com/norviah/testing#readme",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/norviah/testing.git"
-  },
-  "bugs": {
-    "url": "https://github.com/norviah/testing/issues"
-  }
+	"name": "electron-template",
+	"version": "1.6.0",
+	"description": "A template Electron application with React and TypeScript",
+	"main": "./out/main/index.js",
+	"private": "true",
+	"scripts": {
+		"check": "biome check --write",
+		"format:write": "biome format --write",
+		"format:check": "biome format",
+		"lint:write": "biome lint --write",
+		"lint:check": "biome lint",
+		"typecheck:node": "tsc --noEmit -p tsconfig.node.json --composite false",
+		"typecheck:web": "tsc --noEmit -p tsconfig.web.json --composite false",
+		"typecheck": "npm run typecheck:node && npm run typecheck:web",
+		"start": "electron-vite preview",
+		"dev": "electron-vite dev",
+		"build": "npm run typecheck && electron-vite build",
+		"postinstall": "electron-builder install-app-deps",
+		"build:unpack": "npm run build && electron-builder --dir",
+		"build:win": "npm run build && electron-builder --win",
+		"build:mac": "electron-vite build && electron-builder --mac",
+		"build:linux": "electron-vite build && electron-builder --linux"
+	},
+	"dependencies": {
+		"@electron-toolkit/preload": "^3.0.2",
+		"@electron-toolkit/utils": "^4.0.0",
+		"@tailwindcss/vite": "^4.1.5",
+		"electron-updater": "^6.6.2",
+		"tailwindcss": "^4.1.5"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@electron-toolkit/tsconfig": "^1.0.1",
+		"@norviah/bump": "^1.4.1",
+		"@types/node": "^22.15.3",
+		"@types/react": "^19.1.2",
+		"@types/react-dom": "^19.1.2",
+		"@vitejs/plugin-react": "^4.4.1",
+		"electron": "^36.0.0",
+		"electron-builder": "^26.0.12",
+		"electron-vite": "^3.1.0",
+		"react": "^19.1.0",
+		"react-dom": "^19.1.0",
+		"typescript": "^5.8.3",
+		"vite": "^6.3.3"
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": ["electron", "esbuild"]
+	},
+	"homepage": "https://github.com/norviah/testing#readme",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/norviah/testing.git"
+	},
+	"bugs": {
+		"url": "https://github.com/norviah/testing/issues"
+	}
 }
