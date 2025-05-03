@@ -1,3 +1,11 @@
+## [v1.7.0](https://github.com/Norviah/testing/compare/v1.6.0...v1.7.0) (2025-05-03)
+
+- my fault <code>[300f7c3](https://github.com/Norviah/testing/commit/300f7c3e1f1942ce042edbed47bdcfb3acd2d355)</code>
+
+- d <code>[305f35c](https://github.com/Norviah/testing/commit/305f35cdef189b7714fb9a721c66905b04c3a16e)</code>
+
+- d <code>[11a884f](https://github.com/Norviah/testing/commit/11a884f75426c2dc1089f964479a7695c363e6cd)</code>
+
 ## [v1.6.0](https://github.com/Norviah/testing/compare/v1.5.0...v1.6.0) (2025-05-02)
 
 - d <code>[3258b05](https://github.com/Norviah/testing/commit/3258b052258113c935b799e54cef4df69a854083)</code>
