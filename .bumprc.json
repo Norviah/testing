@@ -10,7 +10,7 @@
 				"command": "pnpm run format:check"
 			},
 			{
-				"name": "Checking application",
+				"name": "Checking typings",
 				"command": "pnpm run build"
 			}
 		],
@@ -22,7 +22,11 @@
 			{
 				"name": "Building application",
 				"command": "pnpm run build:win"
-			}
+			},
+      {
+        "name": "Publishing release",
+        "command": "gh release create $(git tag | tail -n 1) dist/*.yml dist/*.exe dist/*.blockmap"
+      }
 		]
 	},
 	"provider": {
