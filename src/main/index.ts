@@ -28,6 +28,7 @@ function createWindow(): void {
       preload: join(__dirname, "../preload/index.js"),
       sandbox: false,
     },
+    title: app.getVersion(),
   });
 
   mainWindow.on("ready-to-show", () => {
