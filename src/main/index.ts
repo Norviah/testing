@@ -19,6 +19,7 @@ function createWindow(): void {
 
   updater.on("error", (error: Error, message?: string) => {
     console.log("ERROR");
+    console.log(error, message);
   });
 
   updater.on("checking-for-update", () => {
