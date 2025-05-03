@@ -15,8 +15,12 @@
 			}
 		],
 		"post": [
+      {
+        "name": "Deleting old build",
+        "command": "rm -rf dist"
+      },
 			{
-				"name": "Re-building application",
+				"name": "Building application",
 				"command": "pnpm run build:win"
 			}
 		]
