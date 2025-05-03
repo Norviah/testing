@@ -15,7 +15,40 @@ export function getAutoUpdater(): AppUpdater {
 function createWindow(): void {
   const updater = getAutoUpdater();
   updater.forceDevUpdateConfig = true;
-  updater.checkForUpdates().then((x) => console.log(x));
+  updater.autoDownload = false;
+
+  updater.on("error", (error: Error, message?: string) => {
+    console.log("ERROR");
+  });
+
+  updater.on("checking-for-update", () => {
+    console.log("CHECKINGJ FOR UDPATE");
+  });
+
+  updater.on("update-not-available", () => {
+    console.log("UUPDATE NOT AVAILABLE");
+  });
+
+  updater.on("update-available", () => {
+    console.log("UPDATE AVAILABLE");
+  });
+
+  updater.on("update-cancelled", () => {
+    console.log("CANCELLED UPDATE");
+  });
+
+  updater.on("download-progress", (info) => {
+    console.log("DOWNLOADING");
+    console.log(`bytes per secodn: ${info.bytesPerSecond}`);
+    console.log(`delta: ${info.delta}`);
+    console.log(`percent: ${info.percent}`);
+    console.log(`total: ${info.total}`);
+    console.log(`transferred: ${info.transferred}`);
+  });
+
+  updater.on("update-downloaded", () => {
+    console.log("UPDATED DOWNLOAD");
+  });
 
   // Create the browser window.
   const mainWindow = new BrowserWindow({
@@ -28,7 +61,6 @@ function createWindow(): void {
       preload: join(__dirname, "../preload/index.js"),
       sandbox: false,
     },
-    title: app.getVersion(),
   });
 
   mainWindow.on("ready-to-show", () => {
