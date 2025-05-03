@@ -1,3 +1,9 @@
+## [v1.5.0](https://github.com/Norviah/testing/compare/v1.4.0...v1.5.0) (2025-05-02)
+
+- d <code>[c4997bb](https://github.com/Norviah/testing/commit/c4997bb95b0e0047c9d9c8e640fa407811704933)</code>
+
+- d <code>[321f98a](https://github.com/Norviah/testing/commit/321f98a835d6f187597f0e4299a385d8b84eec37)</code>
+
 ## [v1.4.0](https://github.com/Norviah/testing/compare/v1.3.0...v1.4.0) (2025-05-02)
 
 - d <code>[d38589e](https://github.com/Norviah/testing/commit/d38589e29ce063aa99598c3799904e483de7453f)</code>
