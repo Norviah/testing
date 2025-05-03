@@ -17,7 +17,7 @@
     "dev": "electron-vite dev",
     "build": "npm run typecheck && electron-vite build",
     "postinstall": "electron-builder install-app-deps",
-    "release": "echo gh release create \"$(git tag | tail -n 1)\" dist/*.yml dist/*.exe dist/*.blockmap",
+    "release": "gh release create \"$(git tag | tail -n 1)\" dist/*.yml dist/*.exe dist/*.blockmap",
     "release:major": "bump release major --changelog && pnpm run release",
     "release:minor": "bump release minor --changelog && pnpm run release",
     "release:patch": "bump release patch --changelog && pnpm run release",
