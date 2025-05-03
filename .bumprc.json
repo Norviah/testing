@@ -23,10 +23,10 @@
 				"name": "Building application",
 				"command": "pnpm run build:win"
 			},
-      {
-        "name": "Publishing release",
-        "command": "gh release create $(git tag | tail -n 1) dist/*.yml dist/*.exe dist/*.blockmap"
-      }
+			{
+				"name": "Publishing release",
+				"command": "gh release create $(git tag | tail -n 1) dist/*.yml dist/*.exe dist/*.blockmap"
+			}
 		]
 	},
 	"provider": {
