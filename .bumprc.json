@@ -26,7 +26,11 @@
 			{
 				"name": "Pushing",
 				"command": "git push --follow-tags"
-			}
+			},
+      {
+        "name": "Publishing release",
+        "command": "gh release create {{newVersion}} dist/*.yml dist/*.exe dist/*.blockmap"
+      }
 		]
 	},
 	"provider": {
