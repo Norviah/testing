@@ -103,7 +103,7 @@ export async function parse() {
   // }
 
   // // worker.terminate();
-  // // console.log(text);
+  // // // console.log(text);
   // const ftextArray = textArray.filter((text) => {
   //   if (text === '') {
   //     return false;
@@ -208,9 +208,9 @@ function parsee(section: string[]): SavedPermitDataStructure<'Stoughton', 'MA'> 
     .match(/(?<address>[^$]+) (?<fee>[^ ]+) ?(?<estimate>[^ ]+) ?(?<date>[^ ]+)/);
 
   if (permit === '24-223') {
-    console.log(restJoin);
-    console.log(rest2);
-    console.log(idk);
+    // console.log(restJoin);
+    // console.log(rest2);
+    // console.log(idk);
   }
 
   const address = grouped?.groups?.address?.trim();

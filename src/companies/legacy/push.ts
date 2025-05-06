@@ -79,8 +79,8 @@ async function main(): Promise<void> {
     }
 
     if (!agent.city || !agent.state || !agent.name) {
-      console.log('skipping agent');
-      console.log(agent);
+      // console.log('skipping agent');
+      // console.log(agent);
       continue;
     }
 
@@ -113,9 +113,9 @@ async function pushAgent(
   );
 
   try {
-    // console.log(agent.name);
-    // console.log(metaInfo);
-    // console.log(metaInfo.ids.includes(agent.name));
+    // // console.log(agent.name);
+    // // console.log(metaInfo);
+    // // console.log(metaInfo.ids.includes(agent.name));
     // writeFileSync(join(paths.DATA, 'meta.json'), JSON.stringify(knownNames, null, 2));
     // throw new Error('stop');
     if (!existsInMonday) {
@@ -124,10 +124,10 @@ async function pushAgent(
         if (key === 'name') {
           continue;
         }
-        // console.log(metaInfo.columnIds);
-        // console.log(key);
-        // console.log(`og value: ${agent[key as keyof Agent]}`);
-        // console.log(`new value: ${agent[names[key as keyof Record<string, any>] as keyof Agent]}`);
+        // // console.log(metaInfo.columnIds);
+        // // console.log(key);
+        // // console.log(`og value: ${agent[key as keyof Agent]}`);
+        // // console.log(`new value: ${agent[names[key as keyof Record<string, any>] as keyof Agent]}`);
         const newSourceObject = { ...existsInPrisma, ...agent };
 
         const idKey = metaInfo.columnIds[key];
@@ -169,15 +169,15 @@ async function pushAgent(
         }),
       }).then((res) => res.json());
       if (response.error_message) {
-        console.log(response);
-        console.log(query);
+        // console.log(response);
+        // console.log(query);
         throw new Error(response);
       }
     }
 
     if (!existsInMonday) {
       if (!existsInPrisma) {
-        console.log(1);
+        // console.log(1);
         const success = await prisma.agent.create({
           data: {
             name: agent.name,
@@ -204,9 +204,9 @@ async function pushAgent(
             svnLink: agent.svnLink,
           },
         });
-        console.log(`created agent ${success.name}`);
+        // console.log(`created agent ${success.name}`);
       } else {
-        console.log(2);
+        // console.log(2);
         const success = await prisma.agent.update({
           where: {
             id: existsInPrisma.id,
@@ -226,14 +226,14 @@ async function pushAgent(
             company: agent.company,
           },
         });
-        console.log(existsInPrisma);
-        console.log(`updated agent ${success.name}`);
+        // console.log(existsInPrisma);
+        // console.log(`updated agent ${success.name}`);
       }
     }
   } catch (e) {
     console.error(`error creating agent ${agent.name}`);
     console.error(e);
-    console.log((e as Error).message);
+    // console.log((e as Error).message);
     throw e;
   }
 }

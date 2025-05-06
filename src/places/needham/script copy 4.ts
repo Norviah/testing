@@ -89,7 +89,7 @@ async function lines(buffer: Buffer, counter: number) {
   await secondImage.write(path.join(__dirname, 'img', `${counter}-2.png`) as `${string}.${string}`);
 
   //
-  console.log(firstY, secondY);
+  // console.log(firstY, secondY);
 }
 
 async function secondCut(firstImage: JimpInstance, secondImage: JimpInstance) {}
@@ -103,7 +103,7 @@ async function main() {
     fs.writeFileSync(path.join(__dirname, 'img', `${counter}.png`), image);
     await lines(image, counter);
 
-    console.log(`Page ${counter} done`);
+    // console.log(`Page ${counter} done`);
 
     counter++;
 

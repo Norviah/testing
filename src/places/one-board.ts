@@ -158,9 +158,9 @@ async function pushCity(raw: SavedPermitDataStructureWithDate<string, string>[])
       }).then((res) => res.json());
 
       if (response.error_message) {
-        console.log('\n\nERROR\n\n');
-        console.log(response);
-        console.log('\n\nERROR\n\n');
+        // console.log('\n\nERROR\n\n');
+        // console.log(response);
+        // console.log('\n\nERROR\n\n');
         throw new Error(response);
       }
 
@@ -179,7 +179,7 @@ async function pushCity(raw: SavedPermitDataStructureWithDate<string, string>[])
         });
       }
 
-      console.log(`created record with permit number ${permit.permitnumber}`);
+      // console.log(`created record with permit number ${permit.permitnumber}`);
       pushedIds.push(permit.permitnumber);
     } catch (e) {
       console.error(`error creating record with permit number ${permit.permitnumber}`);
@@ -188,7 +188,7 @@ async function pushCity(raw: SavedPermitDataStructureWithDate<string, string>[])
     }
   }
 
-  logger.info(`pushed ${pushedIds.length} permits to ${city.name}`);
+  // logger.info(`pushed ${pushedIds.length} permits to ${city.name}`);
 }
 
 const keys = [

@@ -76,7 +76,7 @@ async function main(): Promise<void> {
   //       const match = e[k] === entries[0][k];
 
   //       if (!match) {
-  //         console.log(k);
+  //         // console.log(k);
   //       }
 
   //       return match;
@@ -84,9 +84,9 @@ async function main(): Promise<void> {
   //   });
 
   //   if (!allKeysMatch) {
-  //     console.log('Keys do not match');
-  //     console.log(entries);
-  //     console.log(entries[0].name);
+  //     // console.log('Keys do not match');
+  //     // console.log(entries);
+  //     // console.log(entries[0].name);
   //     return;
   //   }
   // }
@@ -182,11 +182,11 @@ async function main(): Promise<void> {
     };
 
     if (names.includes(agent.name)) {
-      console.log(`skipping agent: ${agent.name}`);
+      // console.log(`skipping agent: ${agent.name}`);
       continue;
     }
 
-    // console.log(agent);
+    // // console.log(agent);
 
     //     id                String        @id @default(cuid())
     // createdAt         DateTime      @default(now())

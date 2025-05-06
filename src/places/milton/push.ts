@@ -74,7 +74,7 @@ export async function main(): Promise<void> {
         }),
       }).then((res) => res.json());
 
-      console.log(response);
+      // console.log(response);
     }
   }
 
@@ -175,7 +175,7 @@ export async function main(): Promise<void> {
       //   },
       // });
 
-      console.log(`created record with permit number ${record.permitnumber}`);
+      // console.log(`created record with permit number ${record.permitnumber}`);
     } catch (e) {
       console.error(`error creating record with permit number ${record.permitnumber}`);
       console.error(e);
@@ -184,5 +184,5 @@ export async function main(): Promise<void> {
 
   //
 
-  // console.log(existingRecords);
+  // // console.log(existingRecords);
 }

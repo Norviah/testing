@@ -3729,7 +3729,7 @@ async function Check() {
 
   const sortedByName = doesnt.sort((a, b) => a.name.localeCompare(b.name));
   writeFileSync(paths.BOARDS, JSON.stringify([...boards, ...sortedByName], null, 2));
-  console.log(doesnt);
+  // console.log(doesnt);
 }
 
 Check();

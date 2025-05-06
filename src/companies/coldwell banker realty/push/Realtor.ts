@@ -80,13 +80,13 @@ export class Realtor {
           timeMultiple: 1.25,
           retry: (e, attemptNumber) => {
             if (e.message === 'no results') {
-              console.log(
+              // console.log(
                 `no results for page ${pageNumber} of ${this.city}, ${this.stateAbbreviation}`,
               );
               return false;
             }
 
-            console.log(`retrying page ${pageNumber} attempt ${attemptNumber}`);
+            // console.log(`retrying page ${pageNumber} attempt ${attemptNumber}`);
 
             return true;
           },
@@ -102,12 +102,12 @@ export class Realtor {
       if (r) {
         maxPageNumber = r;
       }
-      console.log(`scraped page number: ${pageNumber} of ${maxPageNumber}`);
+      // console.log(`scraped page number: ${pageNumber} of ${maxPageNumber}`);
 
       pageNumber++;
     }
 
-    console.log(`finished: ${this.city}, ${this.stateAbbreviation}\n`);
+    // console.log(`finished: ${this.city}, ${this.stateAbbreviation}\n`);
     writeFileSync(`${this.dir}/data.json`, JSON.stringify(this.data, null, 2));
   }
 
@@ -253,7 +253,7 @@ export class Realtor {
       };
 
       this.data.push(data);
-      // console.log(`saved: ${name}`);
+      // // console.log(`saved: ${name}`);
     }
   }
 }

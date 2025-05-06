@@ -77,7 +77,7 @@ export async function parse() {
     // await imageSection.write(
     //   join(paths.STOUGHTON_PICTURES, `${section.from}-${section.to}.jpg`) as `${string}.${string}`,
     // );
-    // console.log(join(paths.STOUGHTON_PICTURES, `${section.from}-${section.to}.jpg`));
+    // // console.log(join(paths.STOUGHTON_PICTURES, `${section.from}-${section.to}.jpg`));
 
     for (const header of headers) {
       // try {

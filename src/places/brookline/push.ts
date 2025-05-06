@@ -6,9 +6,9 @@ import { meta } from '@/utils/helpers';
 
 import * as paths from '@/utils/paths';
 
+import { getBoard } from '@/companies/legacy/utils/group';
 import type { Column } from '@mondaydotcomorg/api';
 import type { Report } from './scrape';
-import { getBoard } from '@/companies/legacy/utils/group'
 
 const BOARD_ID = '6725292625' as const;
 const westRoxburyKeys = [
@@ -68,7 +68,7 @@ const keys = [
 
 // // print west roxbury keys that aren't in brookline keys
 // const diff = westRoxburyKeys.filter((key) => !brooklineKeys.includes(key));
-// console.log(diff);
+// // console.log(diff);
 
 export async function main(): Promise<void> {
   const rawText = readFileSync(paths.BROOKLINE_DATA, 'utf-8');
@@ -121,7 +121,7 @@ export async function main(): Promise<void> {
         }),
       }).then((res) => res.json());
 
-      console.log(response);
+      // console.log(response);
     }
   }
 
@@ -141,10 +141,10 @@ export async function main(): Promise<void> {
     // if (existingRecords.some((r) => r.permitnumber === record.permitnumber)) {
     // if (existingRecords.some((r) => r === record.permitnumber)) {
     if (!record.permitnumber) {
-      continue
+      continue;
     }
 
-    if (board.groups.some(g => g.names.includes(record.permitnumber!))) {
+    if (board.groups.some((g) => g.names.includes(record.permitnumber!))) {
       continue;
     }
 
@@ -192,7 +192,7 @@ export async function main(): Promise<void> {
         }),
       }).then((res) => res.json());
 
-      console.log(response);
+      // console.log(response);
 
       if (response.error_message) {
         throw new Error(response);
@@ -229,7 +229,7 @@ export async function main(): Promise<void> {
       //   },
       // });
 
-      console.log(`created record with permit number ${record.permitnumber}`);
+      // console.log(`created record with permit number ${record.permitnumber}`);
     } catch (e) {
       console.error(`error creating record with permit number ${record.permitnumber}`);
       console.error(e);
@@ -238,5 +238,5 @@ export async function main(): Promise<void> {
 
   //
 
-  // console.log(existingRecords);
+  // // console.log(existingRecords);
 }

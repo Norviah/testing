@@ -76,7 +76,7 @@ async function main(): Promise<void> {
   //       const match = e[k] === entries[0][k];
 
   //       if (!match) {
-  //         console.log(k);
+  //         // console.log(k);
   //       }
 
   //       return match;
@@ -84,9 +84,9 @@ async function main(): Promise<void> {
   //   });
 
   //   if (!allKeysMatch) {
-  //     console.log('Keys do not match');
-  //     console.log(entries);
-  //     console.log(entries[0].name);
+  //     // console.log('Keys do not match');
+  //     // console.log(entries);
+  //     // console.log(entries[0].name);
   //     return;
   //   }
   // }
@@ -182,11 +182,11 @@ async function main(): Promise<void> {
     };
 
     if (names.includes(agent.name)) {
-      console.log(`skipping agent: ${agent.name}`);
+      // console.log(`skipping agent: ${agent.name}`);
       continue;
     }
 
-    // console.log(agent);
+    // // console.log(agent);
 
     //     id                String        @id @default(cuid())
     // createdAt         DateTime      @default(now())
@@ -236,7 +236,7 @@ async function main(): Promise<void> {
     const data = await prisma.agent.create({ data: createData });
     names.push(data.name);
     writeFileSync(join(__filename, '..', 'names.json'), JSON.stringify(names, null, 2));
-    console.log(`created agent: ${data.name}`);
+    // console.log(`created agent: ${data.name}`);
 
     // TODO: go through each entry and create an array containing the state and city for each entry.
     // for each entry, add it to the database if it doesn't already exist. for each city, split it and

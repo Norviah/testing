@@ -150,16 +150,16 @@ export async function main(): Promise<void> {
         }),
       }).then((res) => res.json());
       if (response.error_message) {
-        console.log(response);
-        console.log(query);
+        // console.log(response);
+        // console.log(query);
         throw new Error(response);
       }
 
-      console.log(response);
+      // console.log(response);
     } catch (e) {
       console.error(`error creating item ${item.permitnumber}`);
       console.error(e);
-      console.log((e as Error).message);
+      // console.log((e as Error).message);
       throw e;
     }
   }
@@ -206,11 +206,11 @@ export async function main(): Promise<void> {
   //     }),
   //   }).then((res) => res.json());
 
-  //   console.log(response);
+  //   // console.log(response);
   // }
 
   // const [, ...data] = readFileSync(paths.NEWTON_RAW, 'utf-8');
-  // console.log(data.map((x) => CSVToStringArray(x)));
+  // // console.log(data.map((x) => CSVToStringArray(x)));
   // .split('\n')
   // .map((line) => {
   //   // const l = splitCSVLine(line);
@@ -221,7 +221,7 @@ export async function main(): Promise<void> {
   //   //   return obj;
   //   // }, {} as NewtonData);
 
-  //   // console.log(line);
+  //   // // console.log(line);
 
   //   return CSVToStringArray(line);
 
@@ -232,5 +232,5 @@ export async function main(): Promise<void> {
   //   // }, {} as NewtonData);
   // });
 
-  // console.log(CSVToStringArray(data));
+  // // console.log(CSVToStringArray(data));
 }

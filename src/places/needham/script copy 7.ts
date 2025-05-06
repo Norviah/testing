@@ -118,7 +118,7 @@ async function lines(buffer: Buffer, counter: number) {
   await worker.terminate();
 
   const object = getObject(text, text2);
-  console.log(object);
+  // console.log(object);
 }
 
 async function save(picture: any, pathh: string) {
@@ -134,7 +134,7 @@ async function main() {
     fs.writeFileSync(path.join(__dirname, 'img', `${counter}.png`), image);
     await lines(image, counter);
 
-    console.log(`Page ${counter} done`);
+    // console.log(`Page ${counter} done`);
 
     counter++;
 
@@ -205,7 +205,7 @@ function getObject(firstHalfText: string, secondHalfText: string) {
     moneyCount,
   };
 
-  console.log(object);
+  // console.log(object);
 
   //   const secondHalfText = `
   // OWNER
@@ -298,7 +298,7 @@ function getObject(firstHalfText: string, secondHalfText: string) {
   // permit fee section
   object.permitFees = permitFeeSection.lines.join(' ');
 
-  console.log(object);
+  // console.log(object);
 }
 
 function parseSection({ title, lines }: { title: string; lines: string[] }) {

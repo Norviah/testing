@@ -13,7 +13,7 @@ async function main(): Promise<void> {
   //   text: 'Hello from code',
   // });
 
-  // console.log(info);
+  // // console.log(info);
 
   //
 
@@ -62,7 +62,7 @@ async function main(): Promise<void> {
 
   // const entries = agents.entries();
   // for (const [i, agent] of entries) {
-  //   console.log(`${i} of ${agents.length}`);
+  //   // console.log(`${i} of ${agents.length}`);
   //   const name = agent.name.toLowerCase();
   //   const index = collectedAgents.findIndex((container) =>
   //     container.some((a) => a.name.toLowerCase() === name),
@@ -81,8 +81,8 @@ async function main(): Promise<void> {
 
   // for (const agent of agents) {
   //   if (agent.coldwellLink && agent.realtorLink) {
-  //     console.log(agent);
-  //     console.log('-');
+  //     // console.log(agent);
+  //     // console.log('-');
   //   }
   // }
 
@@ -91,9 +91,9 @@ async function main(): Promise<void> {
   // const agents = (await prisma.agent.findMany()).filter((agent) => typeof agent.email === 'string');
 
   // const namesArray = agents.map((agent) => agent.name);
-  // console.log(namesArray.length);
+  // // console.log(namesArray.length);
   // const names = Array.from(new Set(namesArray));
-  // console.log(names.length);
+  // // console.log(names.length);
 }
 
 main();

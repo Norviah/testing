@@ -78,7 +78,7 @@ export function createTransporter({
 //   <img src="cid:unique@nodemailer.com" width="400" height="150"/>
 //       `.trim();
 
-//   console.log(text);
+//   // console.log(text);
 
 //   const info = await transporter.sendMail({
 //     from: auth.FROM,

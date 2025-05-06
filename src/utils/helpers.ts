@@ -32,9 +32,9 @@ export async function meta(
   columns: Column[] | undefined;
   groups: Group[] | undefined;
 }> {
-  const query = `query { 
-    boards(ids: ${boardId}) { 
-      name 
+  const query = `query {
+    boards(ids: ${boardId}) {
+      name
     	id
           groups {
       title
@@ -67,7 +67,7 @@ export async function meta(
   const board = boards[0];
   const ids = board.items_page.items.map((x) => x.name);
 
-  // console.log(board.columns);
+  // // console.log(board.columns);
 
   const keysToId = [
     ...(board.columns?.map((x) => x!.title).filter((x) => x !== 'Name' && x !== 'Subitems') || []),

@@ -43,7 +43,7 @@ export class Logger extends BaseLogger {
    */
   public constructor() {
     super({
-      write: true,
+      write: false,
       dir: join(
         'logs',
         `${DATE.toLocaleString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}`,

@@ -64,7 +64,7 @@ export async function main(): Promise<void> {
 
   writeFileSync(paths.MEDWAY_DATA, JSON.stringify(data, null, 2));
 
-  console.log(data);
+  // console.log(data);
 }
 
 async function parseTable(page: Page, pageCounter: number) {
@@ -100,15 +100,15 @@ async function parseTable(page: Page, pageCounter: number) {
     let d: Awaited<ReturnType<typeof parsePage>>;
 
     try {
-      console.log(1);
+      // console.log(1);
       d = await parsePage(page);
-      console.log(2);
+      // console.log(2);
     } catch {
-      console.log(3);
+      // console.log(3);
       await page.goBack();
       continue;
     }
-    console.log(4);
+    // console.log(4);
 
     // worktype                       String?
     // permittypedescr                String?
@@ -160,7 +160,9 @@ async function parseTable(page: Page, pageCounter: number) {
       ...d,
       isDemo: d.isDemo
         ? String(d.isDemo).toLowerCase().includes('yes')
-        : description!.toLowerCase().includes('demo') || d.permittypedescr?.toLowerCase().includes('demo') || false,
+        : description!.toLowerCase().includes('demo') ||
+          d.permittypedescr?.toLowerCase().includes('demo') ||
+          false,
       permitnumber: permitNumber!,
       address: permitAddress!,
       permittypedescr: permitType!,
@@ -191,7 +193,7 @@ async function parseTable(page: Page, pageCounter: number) {
       currentPage = pageCounter;
     }
 
-    logger.info(`parsed ${permitNumber} (${i + 1}/${rows.length})`);
+    // logger.info(`parsed ${permitNumber} (${i + 1}/${rows.length})`);
 
     await new Promise((resolve) => setTimeout(resolve, 5000));
     rows = await getRows(page);

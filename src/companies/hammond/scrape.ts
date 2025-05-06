@@ -81,7 +81,7 @@ async function main(): Promise<void> {
     await newPage.bringToFront();
     const d = await scrape(newPage);
     data.push(d);
-    console.log(`scraped ${data[data.length - 1].name}`);
+    // console.log(`scraped ${data[data.length - 1].name}`);
     await newPage.close();
   }
 
@@ -178,7 +178,7 @@ async function scrape(page: Page): Promise<Agent> {
 
 //     const agentNameElement = (await agent.$('.agentCard-name')) as ElementHandle<HTMLDivElement>;
 //     const name = (await agentNameElement!.evaluate((el) => el.textContent))?.trim();
-//     console.log(`scraping ${name}`);
+//     // console.log(`scraping ${name}`);
 
 //     const agentEmailElement = (await agent.$('.agentCard-email')) as ElementHandle<HTMLDivElement>;
 //     const email = (await agentEmailElement!.evaluate((el) => el.textContent))?.trim();

@@ -182,7 +182,7 @@ export async function parse() {
   for await (const image of document) {
     const o = await lines(image, counter);
 
-    console.log(`Page ${counter} done`);
+    // console.log(`Page ${counter} done`);
 
     data.push(...o);
 
@@ -326,7 +326,7 @@ function getObject(firstHalfText: string, secondHalfText: string) {
     }
 
     if (ownerSectionNumberIndex === undefined) {
-      console.log(secondHalfText);
+      // console.log(secondHalfText);
       throw new Error('Owner section number index not found');
     }
 

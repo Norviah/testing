@@ -127,7 +127,7 @@ export async function parse() {
   }
 
   // worker.terminate();
-  // console.log(text);
+  // // console.log(text);
   const ftextArray = textArray.filter((text) => {
     if (text === '') {
       return false;
@@ -151,7 +151,7 @@ export async function parse() {
     return true;
   });
 
-  console.log(textArray);
+  // console.log(textArray);
   worker.terminate();
   writeFileSync(join(paths.DATA, 'text.json'), JSON.stringify(ftextArray, null, 2));
   writeFileSync(join(paths.DATA, 'text raw.json'), JSON.stringify(textArray, null, 2));

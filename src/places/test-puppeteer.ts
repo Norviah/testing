@@ -3,7 +3,7 @@ import * as pup from 'puppeteer';
 import { browserConfig } from '@/utils/config';
 
 async function main() {
-  console.log('Launch browser');
+  // console.log('Launch browser');
   const browser = await pup.launch({
     headless: true,
     executablePath: '/usr/bin/chromium-browser',
@@ -12,14 +12,14 @@ async function main() {
     // args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
 
-  console.log('Opening page');
+  // console.log('Opening page');
   const page = await browser.newPage();
   await page.goto('https://google.com');
   await browser.close();
 
-  // console.log('Go to page');
+  // // console.log('Go to page');
 
-  // console.log('Close browser');
+  // // console.log('Close browser');
   // await browser.close();
 }
 

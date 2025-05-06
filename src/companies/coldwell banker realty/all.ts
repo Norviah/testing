@@ -38,7 +38,7 @@ async function main(): Promise<void> {
   for (const row of rows) {
     const link = await row.$('a');
     const href = await link!.evaluate((el) => el.getAttribute('href'));
-    console.log(`starting new ${href}`);
+    // console.log(`starting new ${href}`);
 
     const newPage = await browser.newPage();
     await newPage.goto(`https://www.coldwellbankerhomes.com${href}`);
@@ -54,7 +54,7 @@ async function main(): Promise<void> {
 
     writeFileSync(path, JSON.stringify(agentData, null, 2));
 
-    console.log('done\n');
+    // console.log('done\n');
 
     await newPage.close();
   }
@@ -92,9 +92,9 @@ async function importStatePage(
 
     const href = await nameLink!.evaluate((el) => el.getAttribute('href'));
     if (!href) {
-      console.log('\nno href found');
-      console.log(`${nameText} from ${city}, ${state}`);
-      console.log(url);
+      // console.log('\nno href found');
+      // console.log(`${nameText} from ${city}, ${state}`);
+      // console.log(url);
 
       const agentData: Partial<Agent> = {};
 
@@ -119,7 +119,7 @@ async function importStatePage(
 
       data.push(agentData as Agent);
 
-      console.log('');
+      // console.log('');
       continue;
     }
     const newPage = await browser.newPage();
@@ -136,7 +136,7 @@ async function importStatePage(
       city: city!.charAt(0).toUpperCase() + city!.slice(1),
     };
 
-    console.log(`saved ${nameText} from ${city}, ${state}`);
+    // console.log(`saved ${nameText} from ${city}, ${state}`);
     data.push(agentData);
     await newPage!.close();
   }

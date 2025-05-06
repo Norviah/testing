@@ -51,7 +51,7 @@ export class Handler {
       this.Register(file);
     }
 
-    logger.success(`${this.websites.length} websites registered\n\n`);
+    logger.success(`${this.websites.length} websites registered\n\n`, {});
   }
 
   /**
@@ -74,7 +74,7 @@ export class Handler {
     }
 
     this.websites.push(website);
-    logger.info(`registered ${website.GetName()}`);
+    // logger.info(`registered ${website.GetName()}`);
   }
 
   /**

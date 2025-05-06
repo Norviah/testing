@@ -206,12 +206,12 @@ export async function main(): Promise<void> {
     content = await getBody(page);
     finished = await readTable(browser, content!);
     if (!finished) {
-      console.log('next page');
+      // console.log('next page');
     }
     await new Promise((resolve) => setTimeout(resolve, bigDelay));
   } while (!finished);
 
-  console.log('done');
+  // console.log('done');
   await page.close();
   await browser.close();
 
@@ -220,7 +220,7 @@ export async function main(): Promise<void> {
   }
 
   writeFileSync(paths.NORWOOD_DATA, JSON.stringify(exported, null, 2));
-  console.log(`saved to ${paths.NORWOOD_DATA}`);
+  // console.log(`saved to ${paths.NORWOOD_DATA}`);
 }
 
 async function readTable(
@@ -255,7 +255,7 @@ async function readTable(
     await newPage!.bringToFront();
     const object = await data(newPage!);
     exported.push(object);
-    console.log(`saved ${permitNumberText}`);
+    // console.log(`saved ${permitNumberText}`);
   }
 
   const paginationButtonsContainer = await content.$('#paginationList');

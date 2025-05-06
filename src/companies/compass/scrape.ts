@@ -84,7 +84,7 @@ async function main(): Promise<void> {
 
   writeFileSync(DATA, JSON.stringify(data, null, 2));
   await page.close();
-  console.log('done');
+  // console.log('done');
 }
 
 async function scrapePage(page: Page): Promise<{ finished: boolean; data: Agent[] }> {
@@ -102,7 +102,7 @@ async function scrapePage(page: Page): Promise<{ finished: boolean; data: Agent[
 
     const agentNameElement = (await agent.$('.agentCard-name')) as ElementHandle<HTMLDivElement>;
     const name = (await agentNameElement!.evaluate((el) => el.textContent))?.trim();
-    console.log(`scraping ${name}`);
+    // console.log(`scraping ${name}`);
 
     const agentEmailElement = (await agent.$('.agentCard-email')) as ElementHandle<HTMLDivElement>;
     const email = (await agentEmailElement!.evaluate((el) => el.textContent))?.trim();

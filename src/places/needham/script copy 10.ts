@@ -146,18 +146,18 @@ async function lines(buffer: Buffer, counter: number) {
 
   await worker.terminate();
 
-  // console.log(text, text2);
+  // // console.log(text, text2);
   const firstPermitObject = getObject(firstPermitFirstHalfText, firstPermitSecondHalfText);
   const secondPermitObject = getObject(secondPermitFirstHalfText, secondPermitSecondHalfText);
 
-  console.log('---');
-  console.log(firstPermitFirstHalfText);
-  console.log();
-  console.log(firstPermitSecondHalfText);
-  console.log('---');
-  console.log(secondPermitFirstHalfText);
-  console.log('-');
-  console.log(secondPermitSecondHalfText);
+  // console.log('---');
+  // console.log(firstPermitFirstHalfText);
+  // console.log();
+  // console.log(firstPermitSecondHalfText);
+  // console.log('---');
+  // console.log(secondPermitFirstHalfText);
+  // console.log('-');
+  // console.log(secondPermitSecondHalfText);
 
   return [firstPermitObject, secondPermitObject];
 }
@@ -187,7 +187,7 @@ export async function parse() {
     if (counter === 83) {
       const o = await lines(image, counter);
 
-      console.log(`Page ${counter} done`);
+      // console.log(`Page ${counter} done`);
 
       data.push(...o);
     }
@@ -329,7 +329,7 @@ function getObject(firstHalfText: string, secondHalfText: string) {
     }
 
     if (ownerSectionNumberIndex === undefined) {
-      console.log(secondHalfText);
+      // console.log(secondHalfText);
       throw new Error('Owner section number index not found');
     }
 

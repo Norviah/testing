@@ -35,8 +35,8 @@ export async function ensureKeys(
           query: query,
         }),
       }).then((res) => res.json());
-      console.log(`Created column: ${key} with id: ${response.data.create_column.id}`);
-      console.log(response);
+      // console.log(`Created column: ${key} with id: ${response.data.create_column.id}`);
+      // console.log(response);
     }
   }
 

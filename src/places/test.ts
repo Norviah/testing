@@ -34,12 +34,12 @@ async function main() {
     // const scrapeScript = require(join(__dirname, dirName, 'scrape.js')) as File;
     // await scrapeScript.main();
 
-    logger.info(`pushing ${dirName}`);
+    // logger.info(`pushing ${dirName}`);
     await push(join(paths.PERMITS, dirName, 'data.json'));
 
-    logger.info(`${dirName} done\n`);
+    // logger.info(`${dirName} done\n`);
   } catch (e) {
-    logger.error([`Error in ${dirName}: ${e}`, (e as Error).stack || '']);
+    // logger.error([`Error in ${dirName}: ${e}`, (e as Error).stack || '']);
     throw e;
   }
 }

@@ -68,7 +68,7 @@ async function main(): Promise<void> {
 
   //   for (const city of cities) {
   //     // if (savedCities.includes(city)) {
-  //     //   console.log(`skipping ${city}, ${state}`);
+  //     //   // console.log(`skipping ${city}, ${state}`);
   //     //   continue;
   //     // }
   //     await scrapeCity({ browser, state, city, page });
@@ -83,7 +83,7 @@ async function scrapeCity({
   browser,
 }: { state: string; city: string; page: Page; browser: Browser }): Promise<void> {
   await page.goto(BASE_URL.replace('[state]', state).replace('[city]', city), { timeout: 0 });
-  console.log(`starting ${city}, ${state}`);
+  // console.log(`starting ${city}, ${state}`);
 
   const pageNotFoundElement = await page.$('.page-not-found');
 
@@ -98,7 +98,7 @@ async function scrapeCity({
       data = data.concat(call.data);
     } while (!finished);
   } else {
-    console.log('unknown place, no values found\n');
+    // console.log('unknown place, no values found\n');
   }
 
   const dir = join(paths.COMPANIES_COLDWELL, state, city);
@@ -110,7 +110,7 @@ async function scrapeCity({
 
   writeFileSync(path, JSON.stringify(data, null, 2));
 
-  console.log('done\n');
+  // console.log('done\n');
 }
 async function importStatePage(
   browser: Browser,
@@ -128,9 +128,9 @@ async function importStatePage(
 
     const href = await nameLink!.evaluate((el) => el.getAttribute('href'));
     if (!href) {
-      console.log('\nno href found');
-      console.log(`${nameText} from ${city}, ${state}`);
-      console.log(url);
+      // console.log('\nno href found');
+      // console.log(`${nameText} from ${city}, ${state}`);
+      // console.log(url);
 
       const agentData: Partial<Agent> = {};
 
@@ -155,7 +155,7 @@ async function importStatePage(
 
       data.push(agentData as Agent);
 
-      console.log('');
+      // console.log('');
       continue;
     }
     const newPage = await browser.newPage();
@@ -167,15 +167,15 @@ async function importStatePage(
           startingDelay: 1000,
           timeMultiple: 1.25,
           retry: (e, attemptNumber) => {
-            console.log(`retrying to connect to page ${nameText}: attempt ${attemptNumber}`);
+            // console.log(`retrying to connect to page ${nameText}: attempt ${attemptNumber}`);
 
             return true;
           },
         },
       );
     } catch (e) {
-      console.log(`error: ${e}`);
-      console.log(`failed to connect to ${nameText}`);
+      // console.log(`error: ${e}`);
+      // console.log(`failed to connect to ${nameText}`);
       await newPage.close();
       continue;
     }
@@ -196,7 +196,7 @@ async function importStatePage(
       link: href ? `https://www.coldwellbankerhomes.com${href}` : undefined,
     };
 
-    console.log(`scraped ${nameText}`);
+    // console.log(`scraped ${nameText}`);
     data.push(agentData);
     await newPage!.close();
   }

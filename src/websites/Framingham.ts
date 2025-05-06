@@ -149,7 +149,7 @@ export default class Framingham extends Website<'Framingham', 'MA'> {
   //   try {
   //     const page = await this.browser.newPage();
 
-  //     await backOff(async () => console.log('hi'), {
+  //     await backOff(async () => // console.log('hi'), {
   //       numOfAttempts: this.maxAttempts,
   //       startingDelay: 5 * 1000,
   //       timeMultiple: 5,

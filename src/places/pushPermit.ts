@@ -96,9 +96,9 @@ export async function pushPermit({
     }).then((res) => res.json());
 
     if (response.error_message) {
-      console.log('\n\nERROR\n\n');
-      console.log(response);
-      console.log('\n\nERROR\n\n');
+      // console.log('\n\nERROR\n\n');
+      // console.log(response);
+      // console.log('\n\nERROR\n\n');
       throw new Error(response);
     }
 
@@ -125,7 +125,7 @@ export async function pushPermit({
       });
     }
 
-    // console.log(`created record with permit number ${permit.permitnumber}`);
+    // // console.log(`created record with permit number ${permit.permitnumber}`);
     pushedIds.push(permit);
     return true;
   } catch (e) {

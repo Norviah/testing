@@ -109,8 +109,8 @@ async function main(): Promise<void> {
 
     // if (city.boardId && city.groupId && !city.agents.some((agent) => agent.monday.length === 0)) {
     if (city.boardId && city.groupId) {
-      // console.log(city.name);
-      // console.log(existingGroup?.id);
+      // // console.log(city.name);
+      // // console.log(existingGroup?.id);
 
       // if (city.name === 'Lynn' && city.state.name === 'MA') {
       if (
@@ -123,13 +123,13 @@ async function main(): Promise<void> {
         //     .at(-1)
         //     ?.monday.some((entry) => entry.boardId === BOARD_ID && entry.groupId === city.groupId)
         // ) {
-        // console.log(`skipping ${city.name}`);
+        // // console.log(`skipping ${city.name}`);
       } else {
         continue;
       }
     }
 
-    // console.log(`breaking ${city.name}`);
+    // // console.log(`breaking ${city.name}`);
     // throw new Error('stop');
     totalAmount += city.agents.length;
 
@@ -162,7 +162,7 @@ async function main(): Promise<void> {
     for (const agent of city.agents) {
       // totalAmount++;
 
-      // console.log(agent.name);
+      // // console.log(agent.name);
       if (agent.monday.some((entry) => entry.boardId === BOARD_ID && entry.groupId === group.id)) {
         continue;
       }
@@ -177,7 +177,7 @@ async function main(): Promise<void> {
           startingDelay: 1000,
           timeMultiple: 1.25,
           retry: (e, attemptNumber) => {
-            console.log(
+            // console.log(
               `retrying to update ${agent.name} from ${city.name}, ${city.state.name} attempt ${attemptNumber}`,
             );
 
@@ -185,11 +185,11 @@ async function main(): Promise<void> {
           },
         });
       } catch (e) {
-        console.log(`failed to update ${agent.name} from ${city.name}, ${city.state.name}`);
+        // console.log(`failed to update ${agent.name} from ${city.name}, ${city.state.name}`);
       }
     }
 
-    console.log(`finished ${city.name}, ${city.state}`);
+    // console.log(`finished ${city.name}, ${city.state}`);
   }
 }
 
@@ -214,9 +214,9 @@ async function pushAgent(
   //   return;
   // }
   try {
-    // console.log(agent.name);
-    // console.log(metaInfo);
-    // console.log(metaInfo.ids.includes(agent.name));
+    // // console.log(agent.name);
+    // // console.log(metaInfo);
+    // // console.log(metaInfo.ids.includes(agent.name));
     // writeFileSync(join(paths.DATA, 'meta.json'), JSON.stringify(knownNames, null, 2));
     // throw new Error('stop');
     const newObject = {} as Record<string, string | undefined>;
@@ -224,13 +224,13 @@ async function pushAgent(
       if (key === 'name') {
         continue;
       }
-      // console.log(metaInfo.columnIds);
-      // console.log(key);
-      // console.log(`og value: ${agent[key as keyof Agent]}`);
-      // console.log(`new value: ${agent[names[key as keyof Record<string, any>] as keyof Agent]}`);
+      // // console.log(metaInfo.columnIds);
+      // // console.log(key);
+      // // console.log(`og value: ${agent[key as keyof Agent]}`);
+      // // console.log(`new value: ${agent[names[key as keyof Record<string, any>] as keyof Agent]}`);
       // const newSourceObject = { ...existsInPrisma, ...agent };
 
-      // console.log(newSourceObject);
+      // // console.log(newSourceObject);
 
       // const idKey = metaInfo.columnIds[key];
       // const value =
@@ -283,12 +283,12 @@ async function pushAgent(
       }),
     }).then((res) => res.json());
     if (response.error_message) {
-      console.log(response);
-      console.log(query);
+      // console.log(response);
+      // console.log(query);
       throw new Error(response);
     }
 
-    console.log(response);
+    // console.log(response);
 
     const success = await prisma.agent.update({
       where: {
@@ -305,11 +305,11 @@ async function pushAgent(
         },
       },
     });
-    console.log(`updated agent ${success.name}`);
+    // console.log(`updated agent ${success.name}`);
   } catch (e) {
     console.error(`error creating agent ${agent.name}`);
     console.error(e);
-    console.log((e as Error).message);
+    // console.log((e as Error).message);
     throw e;
   }
 }

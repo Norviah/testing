@@ -135,20 +135,20 @@ async function main(): Promise<void> {
       const cityString = sections[sections.length - 1];
 
       if (isCounterFinished(counters, cityString, stateString)) {
-        console.log(`skipping ${cityString}, ${stateString}`);
+        // console.log(`skipping ${cityString}, ${stateString}`);
         continue;
       }
 
-      console.log(`starting with ${city}`);
-      console.log(totalAmount);
-      console.log(data.length);
-      console.log(totalAmount + data.length >= 9999);
+      // console.log(`starting with ${city}`);
+      // console.log(totalAmount);
+      // console.log(data.length);
+      // console.log(totalAmount + data.length >= 9999);
 
-      console.log(cityString, stateString);
+      // console.log(cityString, stateString);
 
       totalAmount += data.length;
 
-      // console.log(cities);
+      // // console.log(cities);
 
       // throw new Error('das');
 
@@ -185,7 +185,7 @@ async function main(): Promise<void> {
         // await new Promise((resolve) => setTimeout(resolve, 500));
         await pushAgent(agent, existingAgents as Agent[], metaInfo, group, knownNames);
       }
-      console.log(`done with ${city}\n`);
+      // console.log(`done with ${city}\n`);
 
       updateCounter({
         city: cityString,
@@ -194,7 +194,7 @@ async function main(): Promise<void> {
       });
     }
 
-    console.log(`done with ${state}\n`);
+    // console.log(`done with ${state}\n`);
   }
 }
 
@@ -217,9 +217,9 @@ async function pushAgent(
   //   return;
   // }
   try {
-    // console.log(agent.name);
-    // console.log(metaInfo);
-    // console.log(metaInfo.ids.includes(agent.name));
+    // // console.log(agent.name);
+    // // console.log(metaInfo);
+    // // console.log(metaInfo.ids.includes(agent.name));
     // writeFileSync(join(paths.DATA, 'meta.json'), JSON.stringify(knownNames, null, 2));
     // throw new Error('stop');
     if (!existsInMonday) {
@@ -264,8 +264,8 @@ async function pushAgent(
         }),
       }).then((res) => res.json());
       if (response.error_message) {
-        console.log(response);
-        console.log(query);
+        // console.log(response);
+        // console.log(query);
         throw new Error(response);
       }
     }
@@ -284,12 +284,12 @@ async function pushAgent(
           activityRange: agent.activityRange,
         },
       });
-      console.log(`created agent ${success.name}`);
+      // console.log(`created agent ${success.name}`);
     }
   } catch (e) {
     console.error(`error creating agent ${agent.name}`);
     console.error(e);
-    console.log((e as Error).message);
+    // console.log((e as Error).message);
     throw e;
   }
 }

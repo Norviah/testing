@@ -60,7 +60,7 @@ async function main(): Promise<void> {
 
     for (const item of group.items_page.items || []) {
       if (item.name in newEmailedList) {
-        console.log(`already emailed ${item.name}\n`);
+        // console.log(`already emailed ${item.name}\n`);
         await updateColumn({
           boardId: BOARD_ID,
           item_id: item.id,
@@ -71,7 +71,7 @@ async function main(): Promise<void> {
       }
 
       if (item.name in oldEmailedList) {
-        console.log(`already emailed ${item.name}\n`);
+        // console.log(`already emailed ${item.name}\n`);
         continue;
       }
 
@@ -80,13 +80,13 @@ async function main(): Promise<void> {
       const emailColumn = item.column_values.find((c) => c.column.title.toLowerCase() === 'email');
 
       if (!emailColumn) {
-        console.log(group);
-        console.log(item);
+        // console.log(group);
+        // console.log(item);
         throw new Error('NO EMAIL COLUMN');
       }
 
       if (emailColumn.value === null || typeof emailColumn.value !== 'string') {
-        console.log(`no email for ${item.name}\n`);
+        // console.log(`no email for ${item.name}\n`);
         continue;
       }
 
@@ -117,9 +117,9 @@ async function main(): Promise<void> {
             startingDelay: 1000,
             timeMultiple: 3,
             retry: (e, attemptNumber) => {
-              console.log(`retrying sending email to ${data.email}: attempt ${attemptNumber}`);
-              console.log(e);
-              console.log();
+              // console.log(`retrying sending email to ${data.email}: attempt ${attemptNumber}`);
+              // console.log(e);
+              // console.log();
 
               return true;
             },
@@ -164,7 +164,7 @@ async function main(): Promise<void> {
           value: 'Yes',
         });
 
-        console.log(`emailed ${item.name}\n`);
+        // console.log(`emailed ${item.name}\n`);
       } catch (e) {
         if (e instanceof Error) {
           throw e;
@@ -180,7 +180,7 @@ async function main(): Promise<void> {
   //   subject: 'Acquiring off Market Properties',
   //   city: '[testing]',
   // });
-  // console.log(i);
+  // // console.log(i);
 }
 
 interface NameParts {

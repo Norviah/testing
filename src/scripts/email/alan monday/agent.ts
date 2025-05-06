@@ -56,16 +56,16 @@ export async function updateColumn(
       }),
     }).then((res) => res.json());
     if (response.error_message) {
-      console.log(response);
-      console.log(query);
+      // console.log(response);
+      // console.log(query);
       throw new Error(response);
     }
 
-    console.log(`updated ${item_id}`);
+    // console.log(`updated ${item_id}`);
   } catch (e) {
     console.error(`error updating item ${item_id}`);
     console.error(e);
-    console.log((e as Error).message);
+    // console.log((e as Error).message);
     throw e;
   }
 }

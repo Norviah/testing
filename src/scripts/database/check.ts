@@ -51,8 +51,8 @@ async function main(): Promise<void> {
     }
   }
 
-  console.log(i);
-  console.log(data.length);
+  // console.log(i);
+  // console.log(data.length);
 }
 
 main();

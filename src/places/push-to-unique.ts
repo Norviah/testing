@@ -23,7 +23,7 @@ export async function main() {
   });
 
   for (const city of cities) {
-    console.log(`pushing ${city.name}`);
+    // console.log(`pushing ${city.name}`);
     const cityIds = savedCities.find((c) => c.name === city.name)!;
 
     if (!cityIds) {
@@ -116,9 +116,9 @@ export async function main() {
         }).then((res) => res.json());
 
         if (response.error_message) {
-          console.log('\n\nERROR\n\n');
-          console.log(response);
-          console.log('\n\nERROR\n\n');
+          // console.log('\n\nERROR\n\n');
+          // console.log(response);
+          // console.log('\n\nERROR\n\n');
           throw new Error(response);
         }
 
@@ -137,7 +137,7 @@ export async function main() {
           });
         }
 
-        console.log(`created record with permit number ${permit.permitnumber}`);
+        // console.log(`created record with permit number ${permit.permitnumber}`);
         pushedIds.push(permit.permitnumber);
       } catch (e) {
         console.error(`error creating record with permit number ${permit.permitnumber}`);
@@ -145,11 +145,11 @@ export async function main() {
         throw e;
       }
     }
-    console.log(`done ${city.name}\n`);
+    // console.log(`done ${city.name}\n`);
   }
 
   // for (const city of citiesDb) {
-  //   // console.log(`no: ${cityDb.name}`);
+  //   // // console.log(`no: ${cityDb.name}`);
 
   //   let cityBoard = cities.find((b) => b.name === city.name);
   //   let created = false;
@@ -159,7 +159,7 @@ export async function main() {
   //     cityBoard = { name: city.name, id: BOARD_ID };
   //     created = true;
 
-  //     console.log(city.name);
+  //     // console.log(city.name);
   //   }
 
   //   let board = await getBoard(BOARD_ID);

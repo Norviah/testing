@@ -51,7 +51,7 @@
 //   await readTable(page);
 //   await browser.close();
 
-//   console.log('done');
+//   // console.log('done');
 //   writeFileSync(paths.REALTORS_BEDFORD_MA_DATA, JSON.stringify(agentData, null, 2));
 // }
 
@@ -143,7 +143,7 @@
 //       phoneNumber,
 //     };
 
-//     console.log(`saved: ${name}`);
+//     // console.log(`saved: ${name}`);
 //     agentData.push(data);
 //   }
 // }
@@ -350,7 +350,7 @@ const places = [
 async function main(): Promise<void> {
   for (const place of places) {
     for (const city of place.cities) {
-      console.log(`starting: ${city}, ${place.stateAbbreviation}`);
+      // console.log(`starting: ${city}, ${place.stateAbbreviation}`);
       const realtor = new Realtor({
         state: place.state,
         stateAbbreviation: place.stateAbbreviation,
@@ -361,7 +361,7 @@ async function main(): Promise<void> {
     }
   }
 
-  console.log('done');
+  // console.log('done');
 }
 
 main();

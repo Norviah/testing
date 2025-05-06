@@ -6,9 +6,9 @@ import { meta } from '@/utils/helpers';
 
 import * as paths from '@/utils/paths';
 
+import { getBoard } from '@/companies/legacy/utils/group';
 import type { Column } from '@mondaydotcomorg/api';
 import type { Record as Data } from './scrape';
-import { getBoard } from '@/companies/legacy/utils/group';
 
 const BOARD_ID = '6725292625' as const;
 
@@ -68,7 +68,7 @@ export async function main(): Promise<void> {
         }),
       }).then((res) => res.json());
 
-      console.log(response);
+      // console.log(response);
     }
   }
 
@@ -82,10 +82,10 @@ export async function main(): Promise<void> {
     throw new Error('no group found');
   }
 
-      const board = await getBoard(BOARD_ID);
+  const board = await getBoard(BOARD_ID);
 
   for (const record of data) {
-    if (board.groups.some(g => g.names.includes(record.permitnumber))) {
+    if (board.groups.some((g) => g.names.includes(record.permitnumber))) {
       continue;
     }
 
@@ -136,7 +136,7 @@ export async function main(): Promise<void> {
         }),
       }).then((res) => res.json());
 
-      console.log(response);
+      // console.log(response);
 
       if (response.error_message) {
         throw new Error(response);
@@ -166,7 +166,7 @@ export async function main(): Promise<void> {
       //   },
       // });
 
-      console.log(`created record with permit number ${record.permitnumber}`);
+      // console.log(`created record with permit number ${record.permitnumber}`);
     } catch (e) {
       console.error(`error creating record with permit number ${record.permitnumber}`);
       console.error(e);
@@ -175,5 +175,5 @@ export async function main(): Promise<void> {
 
   //
 
-  // console.log(existingRecords);
+  // // console.log(existingRecords);
 }

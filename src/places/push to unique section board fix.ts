@@ -174,7 +174,7 @@ async function pushPermits(
   }
 
   if (!permits.length) {
-    logger.info(`no permits to push to ${city.name} (${type})`);
+    // logger.info(`no permits to push to ${city.name} (${type})`);
     return [];
   }
 
@@ -190,7 +190,7 @@ async function pushPermits(
     });
   }
 
-  logger.info(`pushed ${pushedIds.length} permits to ${city.name} (${type})`);
+  // logger.info(`pushed ${pushedIds.length} permits to ${city.name} (${type})`);
   return pushedIds;
 }
 

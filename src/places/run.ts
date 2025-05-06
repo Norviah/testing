@@ -1,15 +1,18 @@
 import { lstatSync, readdirSync } from 'node:fs';
-import { join, sep } from 'node:path';
+import { dirname, join, sep } from 'node:path';
 import { logger } from '@/utils/logger';
 import { push } from './push';
 
 import * as paths from '@/utils/paths';
 
-const ignore = ['brockton', 'weston', 'woburn', 'needham'];
+const ignore = ['boston', 'brockton', 'weston', 'woburn', 'needham'];
 const files = readdirSync(__dirname)
   .filter((f) => !ignore.includes(f))
   .map((f) => join(__dirname, f))
   .filter((f) => lstatSync(f).isDirectory());
+
+const skipTo = '';
+let skipped = false;
 
 type File = {
   main: () => Promise<void>;
@@ -18,6 +21,14 @@ type File = {
 async function main() {
   for (const file of files) {
     const dirName = file.split(sep).pop()?.trim()!;
+
+    if (skipTo.length > 0 && !skipped) {
+      if (dirName !== skipTo) {
+        continue;
+      }
+
+      skipped = true;
+    }
 
     try {
       // logger.info(`scraping ${dirName}`);
@@ -38,7 +49,7 @@ async function main() {
       logger.info(`pushing ${dirName}`);
       await push(join(paths.PERMITS, dirName, 'data.json'));
 
-      logger.info(`${dirName} done\n`);
+      // logger.info(`${dirName} done\n`);
     } catch (e) {
       logger.error([`Error in ${dirName}: ${e}`, (e as Error).stack || '']);
       throw e;

@@ -64,7 +64,7 @@ export async function main(): Promise<void> {
 
   writeFileSync(paths.WOBURN_DATA, JSON.stringify(data, null, 2));
 
-  console.log(data);
+  // console.log(data);
 }
 
 async function parseTable(page: Page, pageCounter: number) {
@@ -159,7 +159,7 @@ async function parseTable(page: Page, pageCounter: number) {
       currentPage = pageCounter;
     }
 
-    logger.info(`parsed ${permitNumber} (${i + 1}/${rows.length})`);
+    // logger.info(`parsed ${permitNumber} (${i + 1}/${rows.length})`);
 
     rows = await getRows(page);
   }

@@ -61,7 +61,7 @@ import type { Agent } from '@prisma/client';
 // //   });
 // // });
 
-// // console.log(directories);
+// // // console.log(directories);
 // writeFileSync(join(paths.DATA, 'states.json'), JSON.stringify(states, null, 2));
 
 // pushing
@@ -87,7 +87,7 @@ async function main(): Promise<void> {
       );
     });
 
-    console.log(cities);
+    // console.log(cities);
   }
 }
 

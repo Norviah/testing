@@ -214,12 +214,12 @@ export async function main(): Promise<void> {
     body = await hi(page);
     finished = await readTable(browser, body!);
     if (!finished) {
-      console.log('next page');
+      // console.log('next page');
     }
     await new Promise((resolve) => setTimeout(resolve, smallDelay));
   } while (!finished);
 
-  console.log('done');
+  // console.log('done');
   await page.close();
   await browser.close();
 
@@ -228,7 +228,7 @@ export async function main(): Promise<void> {
   }
 
   writeFileSync(paths.BROOKLINE_DATA, JSON.stringify(exported, null, 2));
-  console.log(`saved to ${paths.BROOKLINE_DATA}`);
+  // console.log(`saved to ${paths.BROOKLINE_DATA}`);
 }
 
 async function readTable(
@@ -273,14 +273,14 @@ async function readTable(
       const objec = await data(newPage!);
 
       if (objec === false) {
-        console.log(`skipped ${recordNumber}`);
+        // console.log(`skipped ${recordNumber}`);
       } else {
         exported.push({
           ...objec,
           issued_date: date,
           status: status,
         });
-        console.log(`downloaded ${recordNumber}`);
+        // console.log(`downloaded ${recordNumber}`);
       }
     }
   }

@@ -44,7 +44,7 @@ async function lines(buffer: Buffer, counter: number) {
     }
 
     if (secondSection.longestStreak === 908 && !sectionX) {
-      console.log(secondSection);
+      // console.log(secondSection);
       sectionX = secondSection.x;
     }
 
@@ -116,12 +116,12 @@ async function lines(buffer: Buffer, counter: number) {
   const {
     data: { text },
   } = await worker.recognize(path.join(__dirname, 'img', `${counter}-2-1.png`));
-  console.log(text);
-  console.log('---');
+  // console.log(text);
+  // console.log('---');
   const {
     data: { text: text2 },
   } = await worker.recognize(path.join(__dirname, 'img', `${counter}-2-2.png`));
-  console.log(text2);
+  // console.log(text2);
   await worker.terminate();
 
   // await firstPermit.write(path.join(__dirname, 'img', `${counter}-1.png`) as `${string}.${string}`);
@@ -156,7 +156,7 @@ async function main() {
     fs.writeFileSync(path.join(__dirname, 'img', `${counter}.png`), image);
     await lines(image, counter);
 
-    console.log(`Page ${counter} done`);
+    // console.log(`Page ${counter} done`);
 
     counter++;
 

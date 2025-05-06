@@ -95,7 +95,9 @@ export async function main(): Promise<void> {
     }
 
     // check if next button has disabled class
-    const isDisabled = await nextButtonContainer.evaluate((el) => el.classList.contains('disabled'));
+    const isDisabled = await nextButtonContainer.evaluate((el) =>
+      el.classList.contains('disabled'),
+    );
 
     if (isDisabled) {
       finished = true;
@@ -103,7 +105,7 @@ export async function main(): Promise<void> {
 
     if (!finished) {
       await nextButton.click();
-      logger.info('next page');
+      // logger.info('next page');
       await wait(SHORT_DELAY);
     }
   } while (!finished);
@@ -111,7 +113,9 @@ export async function main(): Promise<void> {
   await page.close();
   await browser.close();
 
-  const unique = data.filter((item, index) => data.findIndex((x) => x.permitnumber === item.permitnumber) === index);
+  const unique = data.filter(
+    (item, index) => data.findIndex((x) => x.permitnumber === item.permitnumber) === index,
+  );
 
   writeFileSync(paths.BOSTON_DATA, JSON.stringify(unique, null, 2));
 }
@@ -131,7 +135,7 @@ async function scrape(page: Page) {
     // const data = await row.$$('td');
 
     // const permitnumber = await data[1].evaluate((el) => el.textContent);
-    // console.log(permitnumber);
+    // // console.log(permitnumber);
 
     const data = await row.$$('td');
     const text = await Promise.all(data.map((x) => x.evaluate((el) => el.textContent)));
@@ -152,7 +156,8 @@ async function scrape(page: Page) {
       }
 
       // @ts-ignore
-      parsed[key] = key === 'city' ? parse(text[index]) : key === 'state' ? 'MA' : text[index] || undefined;
+      parsed[key] =
+        key === 'city' ? parse(text[index]) : key === 'state' ? 'MA' : text[index] || undefined;
     }
 
     if (!parsed.issued_date) {
@@ -166,9 +171,9 @@ async function scrape(page: Page) {
     const issuedDate = new Date(parsed.issued_date);
 
     if (Number.isNaN(issuedDate.getTime())) {
-      console.log('Invalid date');
-      console.log(parsed);
-      console.log(issuedDate);
+      // console.log('Invalid date');
+      // console.log(parsed);
+      // console.log(issuedDate);
 
       throw new Error('Invalid date');
     }
@@ -184,7 +189,7 @@ async function scrape(page: Page) {
       parsed.description?.toLowerCase().includes('build')
     ) {
       parsedData.push(parsed as SavedPermitDataStructure<string, 'MA'>);
-      logger.success(`scraped ${parsed.permitnumber}`);
+      // logger.success(`scraped ${parsed.permitnumber}`);
     }
   }
 
@@ -196,7 +201,9 @@ async function wait(milliseconds: number): Promise<void> {
 }
 
 function helper(string: string) {
-  return string[0] === '(' ? `(${string.charAt(1).toUpperCase() + string.slice(2)}` : string.charAt(0).toUpperCase() + string.slice(1);
+  return string[0] === '('
+    ? `(${string.charAt(1).toUpperCase() + string.slice(2)}`
+    : string.charAt(0).toUpperCase() + string.slice(1);
 }
 
 function capitalizeAllWords(string: string) {

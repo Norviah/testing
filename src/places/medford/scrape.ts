@@ -154,7 +154,9 @@ async function parseTable(page: Page, pageCounter: number) {
       ...d,
       isDemo: d.isDemo
         ? String(d.isDemo).toLowerCase().includes('yes')
-        : description!.toLowerCase().includes('demo') || d.permittypedescr?.toLowerCase().includes('demo') || false,
+        : description!.toLowerCase().includes('demo') ||
+          d.permittypedescr?.toLowerCase().includes('demo') ||
+          false,
       permitnumber: permitNumber!,
       address: permitAddress!,
       permittypedescr: permitType!,
@@ -185,7 +187,7 @@ async function parseTable(page: Page, pageCounter: number) {
       currentPage = pageCounter;
     }
 
-    logger.info(`parsed ${permitNumber} (${i + 1}/${rows.length})`);
+    // logger.info(`parsed ${permitNumber} (${i + 1}/${rows.length})`);
 
     await new Promise((resolve) => setTimeout(resolve, 5000));
     rows = await getRows(page);
@@ -234,9 +236,9 @@ async function parsePage(page: Page): Promise<SavedPermitDataStructure<'Medford'
     const divs = await div.$$('div');
 
     // const text = await div.evaluate((node) => node.textContent);
-    // console.log('-dd');
-    // console.log(text?.trim().replace(/[ \n\s]{2,}/, ' '));
-    // console.log('-');
+    // // console.log('-dd');
+    // // console.log(text?.trim().replace(/[ \n\s]{2,}/, ' '));
+    // // console.log('-');
 
     if (!divs || divs.length === 0) {
       throw new Error('No child divs found');
@@ -260,7 +262,7 @@ async function parsePage(page: Page): Promise<SavedPermitDataStructure<'Medford'
 
     // const textContent = await div.evaluate((node) => node.textContent);
 
-    // console.log(textContent);
+    // // console.log(textContent);
 
     // for (const [key, value] of Object.entries(textsWithKey)) {
     //   if (textContent!.toLowerCase().includes(key)) {

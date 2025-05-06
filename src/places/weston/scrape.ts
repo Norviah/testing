@@ -23,7 +23,7 @@ async function getBody(page: ElementHandle<any> | Page) {
   const iframe = await page.waitForSelector('iframe');
   const frame = await iframe!.contentFrame();
   const name = await iframe!.evaluate((e) => e.getAttribute('name'));
-  console.log(name);
+  // console.log(name);
   const body = await frame!.$('body');
 
   return body;
@@ -84,15 +84,15 @@ async function scrape(): Promise<void> {
   // const iframe2 = await body!.waitForSelector('iframe');
   // const frame2 = await iframe2!.contentFrame();
   // const name = await iframe2!.evaluate((e) => e.getAttribute('name'));
-  // console.log(name);
+  // // console.log(name);
   // const body2 = await frame2!.$('body');
 
-  // console.log(await page.$('#icon'));
-  // console.log(await frame2.$('#icon'));
-  // console.log(await body2!.$('#icon'));
+  // // console.log(await page.$('#icon'));
+  // // console.log(await frame2.$('#icon'));
+  // // console.log(await body2!.$('#icon'));
 
   // const iframe3 = await frame2!.waitForSelector('iframe');
-  // console.log(iframe3);
+  // // console.log(iframe3);
 
   // for (let y = 0; y < 5000; y += 5) {
   // for (let y = 0; y < 500; y += 5) {
@@ -102,10 +102,10 @@ async function scrape(): Promise<void> {
   //   for (let x = 0; x < 3000; x += 5) {
 
   // for (let x = 650; x < 700; x += 5) {
-  //   console.log('clicking', x, 75);
+  //   // console.log('clicking', x, 75);
   //   await page.mouse.click(x, 75);
 
-  //   // console.log(y / 5 / 60 + '% done');
+  //   // // console.log(y / 5 / 60 + '% done');
   //   await new Promise((resolve) => setTimeout(resolve, 1500));
   // }
 
@@ -118,7 +118,7 @@ async function scrape(): Promise<void> {
   await page.mouse.click(660, 75);
   await waitForDownload(page);
 
-  console.log(`downloaded to ${paths.WESTON}`);
+  // console.log(`downloaded to ${paths.WESTON}`);
   await browser.close();
 
   // x
@@ -132,25 +132,25 @@ async function scrape(): Promise<void> {
 
   // // get first children
   // const c = await body2!.$('*');
-  // console.log(c);
+  // // console.log(c);
 
   // const iframe = await body2!.$('iframe');
   // const frame = await iframe!.contentFrame();
   // const body3 = await frame!.$('body');
 
-  // console.log(body3);
+  // // console.log(body3);
 
   // const body2 = await getBody(page);
   // const iframe2 = await body2!.$('iframe');
   // const frame2 = await iframe2!.contentFrame();
   // const body3 = await frame2!.$('body');
   // const c = await body3!.$('#download');
-  // console.log(c);
+  // // console.log(c);
 
   //
 
   // const name = await iframe2!.evaluate((e) => e.getAttribute('name'));
-  // console.log(name);
+  // // console.log(name);
 
   // const body2 = await getBody(page);
   // const downloadButton = await body2!.$('div#icon');
@@ -161,18 +161,18 @@ async function scrape(): Promise<void> {
   // const iframe2 = await reactRoot!.$('iframe');
   // const frame2 = await iframe2!.contentFrame();
   // const frameSource = await iframe2!.evaluate((e) => e.getAttribute('src'));
-  // console.log(frame2);
-  // console.log(frameSource);
+  // // console.log(frame2);
+  // // console.log(frameSource);
   // const body2 = await frame2!.$('body');
   // const pdfViewer = await body2!.$('pdf-viewer');
-  // console.log(pdfViewer);
+  // // console.log(pdfViewer);
 
   // const inputs = await body!.$$('input');
-  // console.log(inputs);
+  // // console.log(inputs);
   // await inputs[inputs.length - 1].click();
 
   // const listBox = await body!.$('div[role="listBox"]');
-  // console.log(listBox);
+  // // console.log(listBox);
   // await listBox!.click();
 }
 
@@ -232,7 +232,7 @@ export async function main() {
   const page = await browser.newPage();
   const data = [] as Data[];
 
-  // console.log();
+  // // console.log();
   // await page.goto(join(paths.WESTON, 'PDF.js viewer.pdf'));
 
   for (const [i, link] of links.entries()) {
@@ -247,34 +247,34 @@ export async function main() {
         startingDelay: 1000,
         timeMultiple: 1.25,
         retry: (e, attemptNumber) => {
-          console.log(`retrying link ${link}: attempt ${attemptNumber}`);
+          // console.log(`retrying link ${link}: attempt ${attemptNumber}`);
 
           return true;
         },
       });
 
       // const d = await scrapePage(page);
-      console.log(`scraped ${link} ${i + 1}/${links.length}`);
+      // console.log(`scraped ${link} ${i + 1}/${links.length}`);
       data.push({ ...d, permitnumber: id, link });
       writeFileSync(join(paths.WESTON, 'data.json'), JSON.stringify(data, null, 2));
     } catch (e) {
-      console.log('link', link);
-      console.log('error', e);
+      // console.log('link', link);
+      // console.log('error', e);
       // throw e;
     }
   }
 
-  console.log('finished');
+  // console.log('finished');
 }
 
 async function scrapePage(page: Page): Promise<Data> {
   // await dumpFrameTree(page.mainFrame(), '');
 
   // async function dumpFrameTree(frame: Frame, indent: string) {
-  //   console.log(indent + frame.url());
+  //   // console.log(indent + frame.url());
 
   //   const text = await frame.$eval('*', (element) => element.textContent);
-  //   console.log(text);
+  //   // console.log(text);
   //   for (const child of frame.childFrames()) {
   //     dumpFrameTree(child, indent + '  ');
   //   }

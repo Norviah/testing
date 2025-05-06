@@ -50,7 +50,7 @@ export async function main(): Promise<void> {
 
   // @ts-ignore
   page._client().on('Page.downloadProgress', (e) => {
-    console.log(e);
+    // console.log(e);
   });
 
   // wait for download to finish
@@ -60,9 +60,9 @@ export async function main(): Promise<void> {
   // get list of new files
   const file = readdirSync(downloadsPath).filter((file) => !downloadsFile.includes(file))[0];
 
-  console.log(`downloaded: ${file}`);
+  // console.log(`downloaded: ${file}`);
   renameSync(join(downloadsPath, file), downloadLocationRaw);
-  console.log(`moved file as: ${downloadLocationRaw}`);
+  // console.log(`moved file as: ${downloadLocationRaw}`);
 
   const rawDataString = readFileSync(paths.NEWTON_RAW, 'utf-8').trim();
   const rawParsedData = CSVToStringArray(rawDataString);

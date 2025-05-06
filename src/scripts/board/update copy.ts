@@ -105,9 +105,9 @@ async function main() {
         const newValue = newAgent[key as keyof Agent];
 
         if ((originalValue === undefined || originalValue === null) && newValue !== undefined) {
-          console.log(`${key}`);
-          console.log(`  ${originalValue}`);
-          console.log(`  ${newValue}`);
+          // console.log(`${key}`);
+          // console.log(`  ${originalValue}`);
+          // console.log(`  ${newValue}`);
 
           if (typeof newValue === 'object') {
           } else {
@@ -123,7 +123,7 @@ async function main() {
         include: { monday: true },
       });
 
-      console.log(`updated ${success.name} in prisma`);
+      // console.log(`updated ${success.name} in prisma`);
 
       for (const mondayEntry of success.monday) {
         try {
@@ -132,20 +132,20 @@ async function main() {
             startingDelay: 1000,
             timeMultiple: 1.25,
             retry: (e, attemptNumber) => {
-              console.log(
+              // console.log(
                 `retrying to update ${success.name} from ${city.name}, ${newAgent.state} attempt ${attemptNumber}`,
               );
               return true;
             },
           });
 
-          console.log(`updated ${success.name} from ${city.name}, ${newAgent.state}`);
+          // console.log(`updated ${success.name} from ${city.name}, ${newAgent.state}`);
         } catch (e) {
-          console.log(`failed to update ${success.name} from ${city.name}, ${newAgent.state}`);
+          // console.log(`failed to update ${success.name} from ${city.name}, ${newAgent.state}`);
         }
       }
 
-      console.log('done updating\n');
+      // console.log('done updating\n');
     } else {
       const newModel = await prisma.agent.create({
         data: {
@@ -168,7 +168,7 @@ async function main() {
 
       await createGroupItem(city, city.state, newModel, metaInfo);
 
-      console.log(`created ${newModel.name} in prisma\n`);
+      // console.log(`created ${newModel.name} in prisma\n`);
     }
   }
 
@@ -243,12 +243,12 @@ async function updateGroupItem(
     }),
   }).then((res) => res.json());
   if (response.error_message) {
-    console.log(response);
-    console.log(query);
+    // console.log(response);
+    // console.log(query);
     throw new Error(response);
   }
 
-  console.log(response);
+  // console.log(response);
 }
 
 async function createGroupItem(
@@ -268,13 +268,13 @@ async function createGroupItem(
     if (key === 'name') {
       continue;
     }
-    // console.log(metaInfo.columnIds);
-    // console.log(key);
-    // console.log(`og value: ${agent[key as keyof Agent]}`);
-    // console.log(`new value: ${agent[names[key as keyof Record<string, any>] as keyof Agent]}`);
+    // // console.log(metaInfo.columnIds);
+    // // console.log(key);
+    // // console.log(`og value: ${agent[key as keyof Agent]}`);
+    // // console.log(`new value: ${agent[names[key as keyof Record<string, any>] as keyof Agent]}`);
     // const newSourceObject = { ...existsInPrisma, ...agent };
 
-    // console.log(newSourceObject);
+    // // console.log(newSourceObject);
 
     // const idKey = metaInfo.columnIds[key];
     // const value =
@@ -327,12 +327,12 @@ async function createGroupItem(
     }),
   }).then((res) => res.json());
   if (response.error_message) {
-    console.log(response);
-    console.log(query);
+    // console.log(response);
+    // console.log(query);
     throw new Error(response);
   }
 
-  console.log(response);
+  // console.log(response);
 
   const success = await prisma.agent.update({
     where: {
@@ -349,7 +349,7 @@ async function createGroupItem(
       },
     },
   });
-  console.log(`updated agent ${success.name}`);
+  // console.log(`updated agent ${success.name}`);
 }
 
 main();

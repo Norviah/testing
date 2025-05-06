@@ -22,7 +22,7 @@ export async function getBoard(
       boards(ids: ${BOARD_ID}) {
         id
         name
-        board_folder_id 
+        board_folder_id
         groups {
           id
           title
@@ -51,7 +51,7 @@ export async function getBoard(
                 name
                 column_values {
                   column {
-                    id 
+                    id
                     title
                   }
                   id
@@ -84,7 +84,7 @@ export async function getBoard(
               name
                 column_values {
                   column {
-                    id 
+                    id
                     title
                   }
                   id
@@ -141,8 +141,8 @@ export async function ensureGroup(
         query: query,
       }),
     }).then((res) => res.json());
-    console.log(`Created group: ${name} with id: ${response.data.create_group.id}`);
-    console.log(response);
+    // console.log(`Created group: ${name} with id: ${response.data.create_group.id}`);
+    // console.log(response);
     return await meta(keys, BOARD_ID);
   }
 

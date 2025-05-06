@@ -39,7 +39,7 @@ async function main(): Promise<void> {
   const info = await meta(keys, BOARD_ID);
   const group = board.groups.find((g) => g?.title.toLowerCase() === 'weston')!;
 
-  // console.log(group);
+  // // console.log(group);
 
   // ---
   // PUSHING DATA
@@ -106,7 +106,7 @@ async function main(): Promise<void> {
       }),
     }).then((res) => res.json());
 
-    console.log(response);
+    // console.log(response);
     // initialNumber++;
   }
 }

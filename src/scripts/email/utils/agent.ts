@@ -44,16 +44,16 @@ export async function updateAgent(
       }),
     }).then((res) => res.json());
     if (response.error_message) {
-      console.log(response);
-      console.log(query);
+      // console.log(response);
+      // console.log(query);
       throw new Error(response);
     }
 
-    // console.log(`updated ${agent.name}: ${specificKey} to ${specificValue}`);
+    // // console.log(`updated ${agent.name}: ${specificKey} to ${specificValue}`);
   } catch (e) {
     console.error(`error updating agent ${agent.name}`);
     console.error(e);
-    console.log((e as Error).message);
+    // console.log((e as Error).message);
     throw e;
   }
 }

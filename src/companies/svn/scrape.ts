@@ -81,7 +81,7 @@ async function main(): Promise<void> {
   }
 
   writeFileSync(join(paths.COMPANIES_SVN, 'data.json'), JSON.stringify(data, null, 2));
-  console.log('done');
+  // console.log('done');
 }
 
 async function scrapeAgent(page: Page): Promise<Omit<Agent, 'jobTitle' | 'company'>> {
@@ -98,8 +98,8 @@ async function scrapeAgent(page: Page): Promise<Omit<Agent, 'jobTitle' | 'compan
   const body = await frame!.$('body');
 
   // for (const c of await body!.$$('.mb-1')) {
-  //   console.log(await c.evaluate((el) => el.textContent!.trim()));
-  //   console.log('-');
+  //   // console.log(await c.evaluate((el) => el.textContent!.trim()));
+  //   // console.log('-');
   // }
 
   const [nameContainer, stateCityContainer, officePhoneNumberContainer, phoneNumberContianer] =

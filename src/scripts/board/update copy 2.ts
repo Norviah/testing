@@ -107,9 +107,9 @@ async function main() {
         const newValue = newAgent[key as keyof Agent];
 
         if ((originalValue === undefined || originalValue === null) && newValue !== undefined) {
-          console.log(`${key}`);
-          console.log(`  ${originalValue}`);
-          console.log(`  ${newValue}`);
+          // console.log(`${key}`);
+          // console.log(`  ${originalValue}`);
+          // console.log(`  ${newValue}`);
 
           if (typeof newValue === 'object') {
           } else {
@@ -125,13 +125,13 @@ async function main() {
         include: { monday: true },
       });
 
-      console.log(`updated ${success.name} in prisma`);
+      // console.log(`updated ${success.name} in prisma`);
     } else {
       const groupName = `${newAgent.city} - ${newAgent.state}`;
       metaInfo = await ensureGroup(keys, BOARD_ID, metaInfo, groupName);
       const group = metaInfo.groups?.find((g) => g.title === groupName)!;
 
-      console.log(city);
+      // console.log(city);
 
       const newModel = await prisma.agent.create({
         data: {
@@ -162,7 +162,7 @@ async function main() {
 
       await pushAgent(BOARD_ID, newModel, metaInfo, group);
 
-      console.log(`created ${newModel.name} in prisma\n`);
+      // console.log(`created ${newModel.name} in prisma\n`);
     }
   }
 
@@ -203,9 +203,9 @@ async function pushAgent(
   //   return;
   // }
   try {
-    // console.log(agent.name);
-    // console.log(metaInfo);
-    // console.log(metaInfo.ids.includes(agent.name));
+    // // console.log(agent.name);
+    // // console.log(metaInfo);
+    // // console.log(metaInfo.ids.includes(agent.name));
     // writeFileSync(join(paths.DATA, 'meta.json'), JSON.stringify(knownNames, null, 2));
     // throw new Error('stop');
     const newObject = {} as Record<string, string | undefined>;
@@ -213,13 +213,13 @@ async function pushAgent(
       if (key === 'name') {
         continue;
       }
-      // console.log(metaInfo.columnIds);
-      // console.log(key);
-      // console.log(`og value: ${agent[key as keyof Agent]}`);
-      // console.log(`new value: ${agent[names[key as keyof Record<string, any>] as keyof Agent]}`);
+      // // console.log(metaInfo.columnIds);
+      // // console.log(key);
+      // // console.log(`og value: ${agent[key as keyof Agent]}`);
+      // // console.log(`new value: ${agent[names[key as keyof Record<string, any>] as keyof Agent]}`);
       // const newSourceObject = { ...existsInPrisma, ...agent };
 
-      // console.log(newSourceObject);
+      // // console.log(newSourceObject);
 
       // const idKey = metaInfo.columnIds[key];
       // const value =
@@ -272,12 +272,12 @@ async function pushAgent(
       }),
     }).then((res) => res.json());
     if (response.error_message) {
-      console.log(response);
-      console.log(query);
+      // console.log(response);
+      // console.log(query);
       throw new Error(response);
     }
 
-    console.log(response);
+    // console.log(response);
 
     const success = await prisma.agent.update({
       where: {
@@ -294,11 +294,11 @@ async function pushAgent(
         },
       },
     });
-    console.log(`updated agent ${success.name}`);
+    // console.log(`updated agent ${success.name}`);
   } catch (e) {
     console.error(`error creating agent ${agent.name}`);
     console.error(e);
-    console.log((e as Error).message);
+    // console.log((e as Error).message);
     throw e;
   }
 }

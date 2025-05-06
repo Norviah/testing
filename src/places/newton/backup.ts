@@ -21,8 +21,7 @@ export async function main(): Promise<void> {
   // await save(prisma.brookline, 'Brookline');
   // await save(prisma.norwood, 'Norwood');
   // await save(prisma.milton, 'Milton');
-
-  console.log(await prisma.westRoxbury.findMany());
+  // console.log(await prisma.westRoxbury.findMany());
 }
 
 main();

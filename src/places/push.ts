@@ -271,7 +271,7 @@ async function pushPermits(
     });
   }
 
-  logger.info(`pushed ${pushedIds.length} permits to ${city.name} (${type} - ${FOLDER_ID})`);
+  logger.info(`pushed ${pushedIds.length} permits to ${city.name} (${type} - ${FOLDER_ID})`, {});
   return pushedIds;
 }
 
@@ -372,9 +372,9 @@ async function deleteBoard(boardId: string, groupId: string) {
 
 async function t() {
   // const d = await getBoard('7355753313');
-  // console.log(d);
+  // // console.log(d);
   const dirName = 'woburn';
 
-  logger.info(`pushing ${dirName}`);
+  // logger.info(`pushing ${dirName}`);
   await push(join(paths.PERMITS, dirName, 'data.json'));
 }

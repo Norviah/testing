@@ -49,9 +49,9 @@ export async function main(): Promise<void> {
     throw new Error('No new file downloaded');
   }
 
-  console.log(`downloaded: ${file}`);
+  // console.log(`downloaded: ${file}`);
   renameSync(join(downloadsPath, file), paths.LEXINGTON_RAW);
-  console.log(`moved file as: ${paths.LEXINGTON_RAW}`);
+  // console.log(`moved file as: ${paths.LEXINGTON_RAW}`);
 
   const rawRawData = readFileSync(paths.LEXINGTON_RAW, 'utf-8').trim();
   const rawParsedData = CSVToStringArray(rawRawData);
@@ -108,7 +108,7 @@ export async function main(): Promise<void> {
       startingDelay: 1500,
       timeMultiple: 2,
       retry: (e, attemptNumber) => {
-        console.log(`retrying ${permit.permitnumber}: attempt ${attemptNumber}`);
+        // console.log(`retrying ${permit.permitnumber}: attempt ${attemptNumber}`);
 
         return true;
       },
@@ -125,12 +125,12 @@ export async function main(): Promise<void> {
       groupId: undefined,
     });
 
-    logger.info(`downloaded: ${permit.permitnumber}`);
+    // logger.info(`downloaded: ${permit.permitnumber}`);
   }
 
   await page.close();
   await browser.close();
 
   writeFileSync(paths.LEXINGTON_DATA, JSON.stringify(data, null, 2));
-  console.log(`wrote data to: ${paths.LEXINGTON_DATA}`);
+  // console.log(`wrote data to: ${paths.LEXINGTON_DATA}`);
 }

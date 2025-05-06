@@ -353,6 +353,7 @@ export abstract class Website<City extends string, State extends string> {
       colors: { title: 'blue', ...options?.colors },
       both: true,
       ...options,
+      write: false,
     });
   }
 
@@ -377,6 +378,7 @@ export abstract class Website<City extends string, State extends string> {
       colors: { title: 'green', ...options?.colors },
       both: true,
       ...options,
+      write: false,
     });
   }
 

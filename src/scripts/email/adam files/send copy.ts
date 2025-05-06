@@ -76,24 +76,24 @@ async function main() {
 
   for (const agent of backup) {
     if (!agent.email) {
-      // console.log(`skipping ${agent.name} because they have no email\n`);
+      // // console.log(`skipping ${agent.name} because they have no email\n`);
       continue;
     }
 
     if (agent.name in names) {
-      // console.log(`skipping ${agent.name} because they have already been emailed`);
+      // // console.log(`skipping ${agent.name} because they have already been emailed`);
       continue;
     }
 
     if (agent.name in alanEmailed) {
-      // console.log(`skipping ${agent.name} because Alan already emailed them`);
+      // // console.log(`skipping ${agent.name} because Alan already emailed them`);
       for (const entry of agent.monday) {
         const board = boards[entry.boardId];
 
         if (!board) {
-          console.log('board for this entry not found');
-          console.log(entry);
-          console.log(agent);
+          // console.log('board for this entry not found');
+          // console.log(entry);
+          // console.log(agent);
 
           throw new Error('STOP');
         }
@@ -103,7 +103,7 @@ async function main() {
         writeFileSync(join(DIR, 'names.json'), JSON.stringify(names, null, 2));
       }
 
-      console.log(`skipped ${agent.name} because Alan already emailed them\n`);
+      // console.log(`skipped ${agent.name} because Alan already emailed them\n`);
       continue;
     }
 
@@ -119,7 +119,7 @@ async function main() {
     }
 
     if (wantedCities.length === 0) {
-      // console.log(`skipping ${agent.name} because they have no cities to email\n`);
+      // // console.log(`skipping ${agent.name} because they have no cities to email\n`);
       continue;
     }
 
@@ -129,12 +129,12 @@ async function main() {
       for (const city of wantedCities) {
         await UpdateEmailColumn(agent, city, 'Yes');
       }
-      console.log(`updated wanted cities for ${agent.name}`);
+      // console.log(`updated wanted cities for ${agent.name}`);
 
       for (const city of unwantedCities) {
         await UpdateEmailColumn(agent, city, 'Skip - Already sent email to other city');
       }
-      console.log(`updated unwanted cities for ${agent.name}`);
+      // console.log(`updated unwanted cities for ${agent.name}`);
 
       await new Promise((resolve) => setTimeout(resolve, 1500));
 
@@ -154,9 +154,9 @@ async function main() {
           startingDelay: 1000,
           timeMultiple: 3,
           retry: (e, attemptNumber) => {
-            console.log(`retrying sending email to ${agent.email}: attempt ${attemptNumber}`);
-            console.log(e);
-            console.log();
+            // console.log(`retrying sending email to ${agent.email}: attempt ${attemptNumber}`);
+            // console.log(e);
+            // console.log();
 
             return true;
           },
@@ -166,7 +166,7 @@ async function main() {
       names[agent.name] = i;
       writeFileSync(join(DIR, 'names.json'), JSON.stringify(names, null, 2));
 
-      console.log(`emailed ${agent.name}\n`);
+      // console.log(`emailed ${agent.name}\n`);
     } catch (e) {
       if (e instanceof Error) {
         throw e;
@@ -200,9 +200,9 @@ async function UpdateEmailColumn(
   });
 
   if (!mondayEntry) {
-    console.log('monday entry not found');
-    console.log(agent);
-    console.log(city);
+    // console.log('monday entry not found');
+    // console.log(agent);
+    // console.log(city);
 
     throw new Error('STOP');
   }
@@ -210,9 +210,9 @@ async function UpdateEmailColumn(
   const board = boards[mondayEntry.boardId];
 
   if (!board) {
-    console.log('board for this entry not found');
-    console.log(mondayEntry);
-    console.log(agent);
+    // console.log('board for this entry not found');
+    // console.log(mondayEntry);
+    // console.log(agent);
 
     throw new Error('STOP');
   }

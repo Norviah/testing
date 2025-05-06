@@ -83,7 +83,7 @@ async function main() {
 
     const obj = getObject(firstHalfText, secondHalfText);
     data.push(obj);
-    console.log(`Finished section ${i + 1} of ${sections.length}`);
+    // console.log(`Finished section ${i + 1} of ${sections.length}`);
   }
 
   worker.terminate();
@@ -146,9 +146,9 @@ function getObject(firstHalfText: string, secondHalfText: string) {
     .join(' ')
     .replace(/ESTIMATED COST/g, '');
 
-  // console.log(firstHalfText);
-  // console.log('---');
-  // console.log(descriptionString);
+  // // console.log(firstHalfText);
+  // // console.log('---');
+  // // console.log(descriptionString);
 
   let totalFees: string;
 
@@ -197,17 +197,17 @@ function getObject(firstHalfText: string, secondHalfText: string) {
 
   const secondHalfSections: { title: string; lines: string[] }[] = [];
 
-  // console.log(secondHalfText);
-  // console.log('-');
+  // // console.log(secondHalfText);
+  // // console.log('-');
 
   for (const line of secondHalfText.trim().split('\n')) {
     if (line === '') {
       continue;
     }
 
-    // console.log('---');
-    // console.log(line);
-    // console.log('---');
+    // // console.log('---');
+    // // console.log(line);
+    // // console.log('---');
 
     // const title = titleButHasTwoLowercaseLettersInFrontForSomeReason(line);
 

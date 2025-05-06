@@ -74,13 +74,13 @@ async function main() {
 
       agentsIds.push({ name: newAgent.name, id: newAgent.id });
     } catch (e) {
-      console.log(e);
+      // console.log(e);
       writeFileSync(join(paths.DATA, 'SOMETHING ELSE.json'), JSON.stringify(agentsIds, null, 2));
     }
   }
 
   // const first = agents[0];
-  // console.log(first.monday);
+  // // console.log(first.monday);
   // await prisma.agent.create({
   //   data: {
   //     ...first,

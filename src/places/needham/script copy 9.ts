@@ -125,16 +125,16 @@ async function lines(buffer: Buffer, counter: number) {
 
   await worker.terminate();
 
-  // console.log(text, text2);
+  // // console.log(text, text2);
   const firstPermitObject = getObject(firstPermitFirstHalfText, firstPermitSecondHalfText);
   const secondPermitObject = getObject(secondPermitFirstHalfText, secondPermitSecondHalfText);
 
-  // console.log(firstPermitSecondHalfText);
-  // console.log(secondPermitSecondHalfText);
+  // // console.log(firstPermitSecondHalfText);
+  // // console.log(secondPermitSecondHalfText);
 
-  console.log(firstPermitObject);
-  console.log(secondPermitObject);
-  // console.log(object);
+  // console.log(firstPermitObject);
+  // console.log(secondPermitObject);
+  // // console.log(object);
 }
 
 async function save(picture: any, pathh: string) {
@@ -150,7 +150,7 @@ async function main() {
     fs.writeFileSync(path.join(__dirname, 'img', `${counter}.png`), image);
     await lines(image, counter);
 
-    console.log(`Page ${counter} done`);
+    // console.log(`Page ${counter} done`);
 
     counter++;
 

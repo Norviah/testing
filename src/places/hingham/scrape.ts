@@ -89,7 +89,7 @@ export async function main(): Promise<void> {
 
   await page.close();
   await browser.close();
-  console.log('done');
+  // console.log('done');
 
   if (!existsSync(paths.HINGHAM)) {
     mkdirSync(paths.HINGHAM, { recursive: true });
@@ -146,18 +146,18 @@ async function readTable(
     if (check) {
       // check height and width of input
 
-      // console.log(permitNumber);
+      // // console.log(permitNumber);
       const boundingBox = await check.boundingBox();
 
       if (boundingBox && boundingBox?.width > 21 && boundingBox?.height > 21) {
-        console.log('DEMO');
+        // console.log('DEMO');
         isDemo = true;
       }
     }
     data.isDemo = isDemo;
 
     // if (!isDemo) {
-    //   console.log(`skipped: ${permitNumber}`);
+    //   // console.log(`skipped: ${permitNumber}`);
     //   rows = await tableBody?.$$('tr');
     //   rowCount++;
     //   continue;
@@ -197,7 +197,7 @@ async function readTable(
     data.expiration_date = await GetValue(page, '#HICLicExpDate');
     data.permittypedescr = await GetValue(page, '#LocationNatureofProposedWork');
     exported.push(data);
-    console.log(`saved: ${permitNumber}`);
+    // console.log(`saved: ${permitNumber}`);
     rows = await tableBody?.$$('tr');
     rowCount++;
   }
@@ -209,7 +209,7 @@ async function readTable(
 
   if (hasMore) {
     await link?.click();
-    console.log('next page');
+    // console.log('next page');
     await new Promise((resolve) => setTimeout(resolve, smallDelay));
   }
 

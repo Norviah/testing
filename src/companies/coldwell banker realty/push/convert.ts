@@ -107,11 +107,11 @@ async function main(): Promise<void> {
       const cityString = sections[sections.length - 1];
 
       if (isCounterFinished(counters, cityString, stateString)) {
-        console.log(`skipping ${cityString}, ${stateString}`);
+        // console.log(`skipping ${cityString}, ${stateString}`);
         continue;
       }
 
-      console.log(`starting with ${city}`);
+      // console.log(`starting with ${city}`);
       updateCounter({
         city: cityString,
         state: stateString,
@@ -128,7 +128,7 @@ async function main(): Promise<void> {
         // await new Promise((resolve) => setTimeout(resolve, 500));
         await pushAgent(agent, existingAgents as Agent[], metaInfo, group);
       }
-      console.log(`done with ${city}\n`);
+      // console.log(`done with ${city}\n`);
 
       updateCounter({
         city: cityString,
@@ -137,7 +137,7 @@ async function main(): Promise<void> {
       });
     }
 
-    console.log(`done with ${state}\n`);
+    // console.log(`done with ${state}\n`);
 
     return;
   }
@@ -212,7 +212,7 @@ async function pushAgent(
           activityRange: agent.activityRange,
         },
       });
-      console.log(`created agent ${success.name}`);
+      // console.log(`created agent ${success.name}`);
     }
   } catch (e) {
     console.error(`error creating agent ${agent.name}`);
@@ -241,8 +241,8 @@ async function ensureGroup(
         query: query,
       }),
     }).then((res) => res.json());
-    console.log(`Created group: ${name} with id: ${response.data.create_group.id}`);
-    console.log(response);
+    // console.log(`Created group: ${name} with id: ${response.data.create_group.id}`);
+    // console.log(response);
     return await meta(keys, BOARD_ID);
   }
 
@@ -278,8 +278,8 @@ async function ensureKeys(): Promise<ReturnType<typeof meta>> {
           query: query,
         }),
       }).then((res) => res.json());
-      console.log(`Created column: ${key} with id: ${response.data.create_column.id}`);
-      console.log(response);
+      // console.log(`Created column: ${key} with id: ${response.data.create_column.id}`);
+      // console.log(response);
     }
   }
 

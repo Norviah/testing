@@ -86,7 +86,7 @@ async function readTable(page: Puppeteer.Page): Promise<boolean> {
     // const informationSectionSpans = await informationSection?.$$('span');
     // for (const span of informationSectionSpans ?? []) {
     //   const text = await span.evaluate((el) => el.textContent);
-    //   console.log(text);
+    //   // console.log(text);
 
     //   // check if text equals this pattern: $(any number)(any letter) - $(any number)(any letter)
     //   const rangeMatch = text?.match(/\$([0-9]+)[a-zA-Z] - \$([0-9]+)[a-zA-Z]/);
@@ -101,8 +101,8 @@ async function readTable(page: Puppeteer.Page): Promise<boolean> {
     const nameContainer = await nameLink?.$('span');
     const name = await nameContainer?.evaluate((el) => el.textContent);
 
-    console.log(name);
-    console.log('-');
+    // console.log(name);
+    // console.log('-');
 
     // const agentGroupContainer = await aboutSection?.$('.agent-group');
     // const agentGroup = await agentGroupContainer?.$('div');
@@ -156,7 +156,7 @@ async function readTable(page: Puppeteer.Page): Promise<boolean> {
 
   // if (hasMore) {
   //   await nextButton?.click();
-  //   console.log('next page');
+  //   // console.log('next page');
   //   await new Promise((resolve) => setTimeout(resolve, 1000));
   // }
 

@@ -16,7 +16,7 @@ async function main() {
     },
   });
   writeFileSync(join(paths.DATA, 'backup', 'agents.json'), JSON.stringify(agents, null, 2));
-  console.log('Backup agents done');
+  // console.log('Backup agents done');
 
   const permits = await prisma.permit.findMany({
     include: {
@@ -28,7 +28,7 @@ async function main() {
     },
   });
   writeFileSync(join(paths.DATA, 'backup', 'permits.json'), JSON.stringify(permits, null, 2));
-  console.log('Backup permits done');
+  // console.log('Backup permits done');
 
   const cities = await prisma.city.findMany({
     include: {
@@ -37,11 +37,11 @@ async function main() {
     },
   });
   writeFileSync(join(paths.DATA, 'backup', 'cities.json'), JSON.stringify(cities, null, 2));
-  console.log('Backup cities done');
+  // console.log('Backup cities done');
 
   const states = await prisma.state.findMany();
   writeFileSync(join(paths.DATA, 'backup', 'states.json'), JSON.stringify(states, null, 2));
-  console.log('Backup states done');
+  // console.log('Backup states done');
 }
 
 main();

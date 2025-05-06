@@ -20,7 +20,7 @@ const parsedPath = path.join(__dirname, 'parsed.pdf');
 //   .pdfStream()
 //   .pipe(fs.createWriteStream(path.join(__dirname, 'parsed.pdf')))
 //   .on('finish', () => {
-//     console.log('PDF file saved');
+//     // console.log('PDF file saved');
 //   })
 //   .on('error', (error) => {
 //     console.error(error);
@@ -41,7 +41,7 @@ async function crop() {
   // Example: crop the page from (50, 50) to (400, 600)
   // firstPage.setCropBox(0, 0, firstPage.getWidth(), firstPage.getHeight() / 2);
 
-  // console.log(firstPage.getHeight());
+  // // console.log(firstPage.getHeight());
 
   firstPage.setCropBox(0, 0, firstPage.getWidth(), 305.25);
   // firstPage.setCropBox(firstPage.getHeight(), 0, firstPage.getWidth(), firstPage.getHeight() / 2);
@@ -110,7 +110,7 @@ async function lines(buffer: Buffer, counter: number) {
     }
   }
 
-  // console.log(firstY);
+  // // console.log(firstY);
 
   const firstImage = firstPageImage.crop({
     x: 0,
@@ -136,10 +136,10 @@ async function lines(buffer: Buffer, counter: number) {
   } = await worker.recognize(
     path.join(__dirname, 'img', `${counter}-2.png`) as `${string}.${string}`,
   );
-  console.log(text);
+  // console.log(text);
   await worker.terminate();
 
-  // // console.log(record);
+  // // // console.log(record);
   // fs.writeFileSync(path.join(__dirname, 'record.json'), JSON.stringify(record, null, 1));
   // await new Promise((resolve) => setTimeout(resolve, 1000));
   // let highestStreak = 0;
@@ -188,7 +188,7 @@ async function main() {
     fs.writeFileSync(path.join(__dirname, 'img', `${counter}.png`), image);
     await lines(image, counter);
 
-    console.log(`Page ${counter} done`);
+    // console.log(`Page ${counter} done`);
 
     counter++;
 

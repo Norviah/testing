@@ -6,9 +6,9 @@ import { meta } from '@/utils/helpers';
 
 import * as paths from '@/utils/paths';
 
+import { getBoard } from '@/companies/legacy/utils/group';
 import type { Column } from '@mondaydotcomorg/api';
 import type { Data } from './scrape';
-import { getBoard } from '@/companies/legacy/utils/group';
 
 const BOARD_ID = '6725292625' as const;
 
@@ -30,7 +30,7 @@ const keys = [
 export async function main(): Promise<void> {
   const rawText = readFileSync(paths.WESTON_DATA, 'utf-8');
   const data = JSON.parse(rawText) as Data[];
-  console.log(data.length);
+  // console.log(data.length);
 
   // const existingRecords = await prisma.milton.findMany();
   let metaInfo = await meta(keys, BOARD_ID);
@@ -62,7 +62,7 @@ export async function main(): Promise<void> {
         }),
       }).then((res) => res.json());
 
-      console.log(response);
+      // console.log(response);
     }
   }
 
@@ -76,13 +76,13 @@ export async function main(): Promise<void> {
     throw new Error('no group found');
   }
 
-        const board = await getBoard(BOARD_ID);
+  const board = await getBoard(BOARD_ID);
   for (const record of data) {
     // if (metaInfo.ids.some((r) => r === record.permitnumber)) {
     //   continue;
     // }
 
-        if (board.groups.some(g => g.names.includes(record.permitnumber))) {
+    if (board.groups.some((g) => g.names.includes(record.permitnumber))) {
       continue;
     }
 
@@ -162,7 +162,7 @@ export async function main(): Promise<void> {
       //   },
       // });
 
-      console.log(`created record with permit number ${record.permitnumber}`);
+      // console.log(`created record with permit number ${record.permitnumber}`);
     } catch (e) {
       console.error(`error creating record with permit number ${record.permitnumber}`);
       console.error(e);
@@ -171,5 +171,5 @@ export async function main(): Promise<void> {
 
   //
 
-  // console.log(existingRecords);
+  // // console.log(existingRecords);
 }
