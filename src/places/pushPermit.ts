@@ -32,7 +32,7 @@ export async function pushPermit({
     !permit.permitnumber ||
     group.names.includes(permit.permitnumber) ||
     pushedIds.some((p) => p.permitnumber === permit.permitnumber) ||
-    // city.permits.some((p) => p.permitnumber === permit.permitnumber) ||
+    city.permits.some((p) => p.permitnumber === permit.permitnumber) ||
     restGroups.some((g) => g.names.some((n) => n === permit.permitnumber))
   ) {
     return false;
