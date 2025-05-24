@@ -3,7 +3,9 @@ import { dirname, join, sep } from 'node:path';
 import { logger } from '@/utils/logger';
 import { push } from './push';
 
+import { Manager } from '@/structs/Manager';
 import * as paths from '@/utils/paths';
+import { backOff } from 'exponential-backoff';
 
 const ignore = ['boston', 'brockton', 'weston', 'woburn', 'needham'];
 const files = readdirSync(__dirname)
@@ -31,30 +33,34 @@ async function main() {
     }
 
     try {
-      // logger.info(`scraping ${dirName}`);
-      // const scrapeScript = require(join(file, 'scrape.js')) as File;
-      // await scrapeScript.main();
-
-      // logger.info(`\npushing ${dirName}`);
-      // const pushScript = require(join(file, 'push.js')) as File;
-      // await pushScript.main();
-      // // await push(dirName!);
-
-      // logger.info(`\n${dirName} done\n`);
-
       logger.info(`scraping ${dirName}`);
       const scrapeScript = require(join(__dirname, dirName, 'scrape.js')) as File;
-      await scrapeScript.main();
+
+      await backOff(
+        async () => {
+          await scrapeScript.main();
+        },
+        {
+          numOfAttempts: 3,
+          startingDelay: 5 * 1000,
+          timeMultiple: 5,
+          retry: async (error: Error, attemptNumber: number) => {
+            logger.error(`scraping ${dirName} failed, retrying #${attemptNumber}`);
+            return true;
+          },
+        },
+      );
 
       logger.info(`pushing ${dirName}`);
       await push(join(paths.PERMITS, dirName, 'data.json'));
 
-      // logger.info(`${dirName} done\n`);
+      logger.info(`${dirName} done\n`);
     } catch (e) {
       logger.error([`Error in ${dirName}: ${e}`, (e as Error).stack || '']);
-      throw e;
     }
   }
+
+  await new Manager().Start().catch((e) => logger.error((e as Error)?.message));
 }
 
 main();
